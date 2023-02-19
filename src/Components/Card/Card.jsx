@@ -9,15 +9,18 @@ export default class Card extends React.Component {
         }
     }
 
+    cerrarventana = () => {
+        return 1+1;
+    };
+
     render(){
         return(
             <>
-            <div>
-            <button onClick={}>X</button>
+            <div className={styles.fuente}>
+            <button onClick={this.cerrarventana} >X</button>
             <h2></h2>
             <h2></h2>
-            <h2></h2>
-            <img  src={} alt="" />
+            <img  src={"asdjoaisdj"} alt="" />
             </div>
             </>
         )
