@@ -4,7 +4,7 @@ import SearchBar from "../SearchBar/Search";
 import Card from "../Card/Card";
 
 export default class Homepage extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props)
         this.props = props;
         this.state = {
@@ -12,12 +12,19 @@ export default class Homepage extends React.Component {
         }
     }
 
-    render (){
+    render() {
         return (
             <>
-            <div>
-                <Card/>
-            </div>
+                <div
+                className={styles.background}>
+
+                    <div
+                    className={styles.overlay}>
+
+                        <Card />
+
+                    </div>
+                </div>
 
             </>
         )

@@ -6,10 +6,10 @@
 
 .container {
     align-items: center;
-    position: absolute;
-}
+    text-align: center;
+} 
 
 .card {
     font-family: Poppins;
     text-align: center;
-}
+} 
