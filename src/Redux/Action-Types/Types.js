@@ -1,0 +1,7 @@
+const NUEVASTARJETAS = 'NUEVASTARJETAS';
+const AUMENTAR = 'AUMENTAR';
+
+module.exports = {
+    NUEVASTARJETAS,
+    AUMENTAR
+}

@@ -18,12 +18,10 @@ export default class Homepage extends React.Component {
                 <div
                 className={styles.background}>
 
-                    <div
-                    className={styles.overlay}>
-
+                    <div>
                         <Card />
-
                     </div>
+                    
                 </div>
 
             </>
