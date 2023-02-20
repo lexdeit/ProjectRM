@@ -3,3 +3,13 @@
     text-align: center;
     font-size: 1.1em;
 }
+
+.container {
+    align-items: center;
+    position: absolute;
+}
+
+.card {
+    font-family: Poppins;
+    text-align: center;
+}

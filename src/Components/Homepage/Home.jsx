@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../Homepage/Home.module.css"
-import Button from "../Button/Button"
 import SearchBar from "../SearchBar/Search";
+import Card from "../Card/Card";
 
 export default class Homepage extends React.Component {
     constructor(props){
@@ -15,9 +15,8 @@ export default class Homepage extends React.Component {
     render (){
         return (
             <>
-            <div className={styles.iniciodiv}>
-            <Button/>
-            <SearchBar/>
+            <div>
+                <Card/>
             </div>
 
             </>
