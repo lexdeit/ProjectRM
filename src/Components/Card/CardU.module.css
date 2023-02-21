@@ -1,16 +1,16 @@
 
 
 .card {
-  width: 190px;
-  height: 315px;
+  width: 13em;
+  height: 22em;
   background-image: linear-gradient(163deg, #00ff75 0%, #5affa4 100%);
   border-radius: 20px;
   transition: all .3s;
 }
 
 .card2 {
-  width: 190px;
-  height: 315px;
+  width: 13em;
+  height: 22em;
   background-color: #1a1a1a;
   border-radius: none;
   transition: all .2s;
@@ -23,7 +23,7 @@
 }
 
 .card:hover {
-  box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
+  box-shadow: 0em 0em 3em .5em rgba(0, 255, 119, 0.884);
 }
 
 .informacion {
@@ -31,6 +31,7 @@
   font-family: Poppins;
   color: white;
   padding-top: 2em;
+  font-size: small;
 }
 
 .texto {
@@ -39,8 +40,12 @@
   color: white;
   padding-top: .5em;
   padding-bottom: .5em;
+  font-size: small;
 }
 
 .imagen {
-  border-radius: 20px;
+  border-radius: 1em;
+  width: 13em;
+  height: 13.5em;
+  margin-top: 1.6em;
 }
