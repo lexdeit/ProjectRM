@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import styles from "../Card/Card.module.css";
+import CardU from "./CardU";
+import styles from "../Card/Cards.module.css";
 
 export default function Card() {
     const [tarjetasnext, settarjetanext] = useState([])
@@ -36,6 +37,15 @@ export default function Card() {
     return (
         <>
 
+
+        <CardU 
+        name={characters[0].name} 
+        gender={characters[0].gender}
+        species={characters[0].species}
+        image={characters[0].image}
+        />
+
+        <hr></hr>
             <div class="flex space-x-2 justify-center">
                 <button
                     onClick={nuevasTarjetasprev}
@@ -53,10 +63,10 @@ export default function Card() {
                 >Siguiente</button>
             </div>
 
-            <div className={styles.container}>
-
+            <div className={styles.card}>
                 {characters.map((personaje) => (
-                    <div
+                    <div className={styles.container}
+                        id={personaje.id}   
                         class="flex justify-center">
 
                         <div
@@ -86,6 +96,10 @@ export default function Card() {
                                 <p
                                     class="text-gray-700 text-base mb-4">
                                     {personaje.species}
+                                </p>
+                                <p
+                                    class="text-gray-700 text-base mb-4">
+                                    {personaje.origin.name}
                                 </p>
                                 <button
                                     type="button"

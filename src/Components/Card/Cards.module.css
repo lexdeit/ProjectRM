@@ -5,11 +5,10 @@
 }
 
 .container {
-    align-items: center;
     text-align: center;
+    display: flex;
 } 
 
 .card {
     font-family: Poppins;
-    text-align: center;
-} 
+}

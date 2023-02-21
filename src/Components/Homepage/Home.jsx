@@ -1,7 +1,8 @@
 import React from "react";
 import styles from "../Homepage/Home.module.css"
 import SearchBar from "../SearchBar/Search";
-import Card from "../Card/Card";
+import Card from "../Card/Cards";
+import CardU from "../Card/CardU";
 
 export default class Homepage extends React.Component {
     constructor(props) {
