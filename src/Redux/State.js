@@ -1,6 +1,6 @@
 const {createStore} = require('react-redux');
 const {characters} = require('../../src/Redux/Reducer');
-const {characters} = require('../../src/Redux/Actions');
+const {characters} = require('./Actions');
 
 let store = {
 

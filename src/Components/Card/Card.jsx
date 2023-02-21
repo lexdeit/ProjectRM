@@ -1,29 +1,30 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import styles from "../Card/Card.module.css"
+import styles from "../Card/Card.module.css";
 
 export default function Card() {
-
+    const [tarjetas, settarjeta] = useState([])
     const [characters, setcharacter] = useState([]);
 
-    const urlCharacters = 'https://rickandmortyapi.com/api/character';
-    const axiosCharacters = () => {
-        axios.get(urlCharacters)
+    let urlCharacters = {
+        url: 'https://rickandmortyapi.com/api/character',
+        data: []
+    };
+
+    const axiosCharacters = (url) => {
+        axios.get(url)
             .then(response => {
                 setcharacter(response.data.results);
+                settarjeta(response.data.info.next)
             }).catch((error) => console.log(error))
     };
 
     useEffect(() => {
-        axiosCharacters();
+        axiosCharacters(urlCharacters.url);
     }, [])
 
     const nuevasTarjetas = () => {
-        let nuevasT = 'https://rickandmortyapi.com/api/character?page=3';
-        axios.get(nuevasT)
-        .then(response => {
-            setcharacter(response.data.results);
-        }).catch((error) => console.log(error))
+        tarjetas.length >= 1 ? axiosCharacters?.(tarjetas) : console.log("No hay más tarjetas!");
     }
 
     return (
