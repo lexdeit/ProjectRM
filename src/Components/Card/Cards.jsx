@@ -37,15 +37,21 @@ export default function Card() {
     return (
         <>
 
-
-        <CardU 
-        name={characters[0].name} 
-        gender={characters[0].gender}
-        species={characters[0].species}
-        image={characters[0].image}
-        />
-
-        <hr></hr>
+            <div className={styles.tarjetas}>
+                <CardU
+                // name={characters[0].name} 
+                // gender={characters[0].gender}
+                // species={characters[0].species}
+                // image={characters[0].image}
+                />
+                <CardU
+                // name={characters[1].name} 
+                // gender={characters[1].gender}
+                // species={characters[1].species}
+                // image={characters[1].image}
+                ></CardU>
+            </div>
+            <hr></hr>
             <div class="flex space-x-2 justify-center">
                 <button
                     onClick={nuevasTarjetasprev}
@@ -66,7 +72,7 @@ export default function Card() {
             <div className={styles.card}>
                 {characters.map((personaje) => (
                     <div className={styles.container}
-                        id={personaje.id}   
+                        id={personaje.id}
                         class="flex justify-center">
 
                         <div

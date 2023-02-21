@@ -7,8 +7,15 @@
 .container {
     text-align: center;
     display: flex;
-} 
+
+}
 
 .card {
     font-family: Poppins;
+}
+
+.tarjetas {
+    display: flex;
+    justify-content: center;
+    gap: 3em;
 }
