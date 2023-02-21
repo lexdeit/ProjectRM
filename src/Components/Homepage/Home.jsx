@@ -17,12 +17,14 @@ export default class Homepage extends React.Component {
         return (
             <>
                 <div
-                className={styles.background}>
+                    className={styles.background}>
+                    <h1 className={styles.titulo}>Prueba - Redux and Reactjs</h1>
+                    <h3 className={styles.subtitulo}>by {'{lex}'}</h3>
 
                     <div>
                         <Card />
                     </div>
-                    
+
                 </div>
 
             </>

@@ -18,4 +18,14 @@
     display: flex;
     justify-content: center;
     gap: 3em;
+    margin-bottom: 2em;
+    padding-top: 2em;
+}
+
+.botonesr {
+    padding-top: 4em;
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    gap: 2em;
 }
