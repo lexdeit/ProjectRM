@@ -3,7 +3,8 @@ import React, { useEffect, useState } from "react";
 import styles from "../Card/Card.module.css";
 
 export default function Card() {
-    const [tarjetas, settarjeta] = useState([])
+    const [tarjetasnext, settarjetanext] = useState([])
+    const [tarjetasprev, settarjetaprev] = useState([])
     const [characters, setcharacter] = useState([]);
 
     let urlCharacters = {
@@ -15,7 +16,8 @@ export default function Card() {
         axios.get(url)
             .then(response => {
                 setcharacter(response.data.results);
-                settarjeta(response.data.info.next)
+                settarjetanext(response.data.info.next);
+                settarjetaprev(response.data.info.prev);
             }).catch((error) => console.log(error))
     };
 
@@ -23,8 +25,12 @@ export default function Card() {
         axiosCharacters(urlCharacters.url);
     }, [])
 
-    const nuevasTarjetas = () => {
-        tarjetas.length >= 1 ? axiosCharacters?.(tarjetas) : console.log("No hay más tarjetas!");
+    const nuevasTarjetasnext = () => {
+        tarjetasnext.length >= 1 ? axiosCharacters?.(tarjetasnext) : console.log("No hay más tarjetas!");
+    }
+
+    const nuevasTarjetasprev = () => {
+        tarjetasprev.length >= 1 ? axiosCharacters?.(tarjetasprev) : console.log("No hay más tarjetas!");
     }
 
     return (
@@ -32,12 +38,19 @@ export default function Card() {
 
             <div class="flex space-x-2 justify-center">
                 <button
-                    onClick={nuevasTarjetas}
+                    onClick={nuevasTarjetasprev}
                     type="button"
                     data-mdb-ripple="true"
                     data-mdb-ripple-color="light"
                     class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
-                >Click me</button>
+                >Anterior</button>
+                <button
+                    onClick={nuevasTarjetasnext}
+                    type="button"
+                    data-mdb-ripple="true"
+                    data-mdb-ripple-color="light"
+                    class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+                >Siguiente</button>
             </div>
 
             <div className={styles.container}>
