@@ -1,20 +1,17 @@
 import React from "react";
 import styles from "../../Components/SearchBar/Search.module.css";
 
-export default class SearchBar extends React.Component {
-    constructor(props){
-        this.props = props;
-        this.state = {
+export default function SearchBar(props) {
 
-        }
-    }
-    render(){
-        return (
-        <div>
-          <input type='search' />
-          <button className={styles.search}>Agregar</button>
-        </div>
-        )
-    }
- }
- 
+
+
+    return (
+        <>
+            <div className={styles.div}>
+
+                <input placeholder="Introduce ID" type="text" className={styles.input} required="" />
+            </div>
+        </>
+    )
+
+}
