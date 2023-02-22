@@ -1,6 +1,6 @@
 .btn {
     padding: 0.8em 2em 0.8em 2.5em;
-    font-size: 15px;
+    font-size: 11px;
     font-family: Poppins;
     font-weight: bold;
     border-radius: 15px;
@@ -23,6 +23,7 @@
       inset 0 0 30px 2px #33fd30;
     text-shadow: 0 0 10px #33fd30;
     transform: translateY(-5px);
+    cursor: pointer;
   }
   
   .btn:active {

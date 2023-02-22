@@ -55,11 +55,11 @@ export default function Card() {
 
             <div
                 className={styles.botonesr}>
-                
 
-                <Buttons infoboton={"ANTERIOR"} funcion={nuevasTarjetasprev}></Buttons>
-                <Buttons infoboton={"RANDOM"} funcion={renderizar}></Buttons>
-                <Buttons infoboton={"SIGUIENTE"} funcion={nuevasTarjetasnext}></Buttons>
+
+                <Buttons infoboton={"PREV"} funcion={nuevasTarjetasprev}></Buttons>
+                <Buttons infoboton={"Random"} funcion={renderizar}></Buttons>
+                <Buttons infoboton={"NEXT"} funcion={nuevasTarjetasnext}></Buttons>
 
             </div>
 
