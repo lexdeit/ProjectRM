@@ -5,8 +5,6 @@ import styles from "../Card/Cards.module.css";
 import Buttons from "../Buttons/Buttons";
 
 export default function Card() {
-    const [tarjetasnext, settarjetanext] = useState([])
-    const [tarjetasprev, settarjetaprev] = useState([])
     const [characters, setcharacter] = useState([]);
     const [showCard, setShowCard] = useState([]);
     const [cards, setcards] = useState([])
@@ -19,12 +17,18 @@ export default function Card() {
     const axiosCharacters = (url) => {
         axios.get(url)
             .then(response => {
-                setcharacter(response.data.results);
-                settarjetanext(response.data.info.next);
-                settarjetaprev(response.data.info.prev);
-            }).catch((error) => console.log(error))
 
+                let nuevosCaracteres = response.data.results;
+                setcharacter(prevCharacters => [...prevCharacters, ...nuevosCaracteres]);
+
+                response.data.info.next ? 
+                axiosCharacters(response.data.info.next) 
+                : console.log("No hay mas paginas!");
+
+            })
+            .catch((error) => console.log(error));
     };
+
 
 
     useEffect(() => {
@@ -47,15 +51,6 @@ export default function Card() {
         setcards(tarjetasPersonaje)
     }
 
-    const nuevasTarjetasnext = () => {
-        tarjetasnext.length >= 1 ? axiosCharacters?.(tarjetasnext)
-            : console.log("No hay más tarjetas!");
-    }
-
-    const nuevasTarjetasprev = () => {
-        tarjetasprev.length >= 1 ? axiosCharacters?.(tarjetasprev)
-            : console.log("No hay más tarjetas!");
-    }
 
     const cerrarTarjeta = (key) => {
         const filtrados = showCard.filter((elemento) => elemento.key !== key)
@@ -70,7 +65,7 @@ export default function Card() {
     };
 
     const mostrarinfo = () => {
-        console.log(showCard[2].key);
+        console.log(characters);
     }
 
     return (
@@ -80,7 +75,7 @@ export default function Card() {
 
                 <Buttons
                     infoboton={"PREV"}
-                    funcion={nuevasTarjetasprev}>
+                    >
                 </Buttons>
 
                 <Buttons
@@ -90,7 +85,7 @@ export default function Card() {
 
                 <Buttons
                     infoboton={"NEXT"}
-                    funcion={nuevasTarjetasnext}>
+                    >
                 </Buttons>
 
                 <Buttons
