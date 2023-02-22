@@ -2,10 +2,12 @@
 
 .card {
   width: 250px;
-  height: 384px;
+  height: 393px;
   background-image: linear-gradient(163deg, #00ff75 0%, #5affa4 100%);
   transition: all .3s;
   border-radius: 20px;
+  box-shadow: 0em 0em .5em .1em rgba(0, 255, 119, 0.9);
+  animation: floating 3s ease-in-out infinite;
 
 }
 
@@ -20,13 +22,14 @@
 }
 
 .card2:hover {
-  transform: scale(0.98);
-  border-radius: 25px;
+  transform: scale(0.95);
 }
 
 .card:hover {
-  box-shadow: 0em 0em 3em .5em rgba(0, 255, 119, 0.884);
-  animation: floating 3s ease-in-out infinite;
+  transform: scale(0.5);
+  border-radius: 10px;
+  box-shadow: 0em 0em 2em .8em rgba(0, 255, 119, 0.7);
+
 }
 
 @keyframes floating {
@@ -61,16 +64,16 @@
 .imagen {
   border-radius: 5% 5% 10% 10%;
   width: 250px;
-  height: 206px;
+  height: 208px;
 }
 
 
-/* .btn {
-  margin-top: 3%;
+.btn {
+  /* margin-top: 3%;
   margin-left: 4%;
-  padding: 0%;
+  padding: 0%; */
   background-color: transparent;
   border-color: transparent;
   font-size: large;
   cursor: pointer;
-} */
+}
