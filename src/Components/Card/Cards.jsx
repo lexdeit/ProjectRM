@@ -8,63 +8,64 @@ export default function Card() {
     const [tarjetasnext, settarjetanext] = useState([])
     const [tarjetasprev, settarjetaprev] = useState([])
     const [characters, setcharacter] = useState([]);
-    const [showCard, setShowCard] = useState(false);
+    const [showCard, setShowCard] = useState([]);
+    const [cards, setcards] = useState([])
 
     let urlCharacters = {
         url: 'https://rickandmortyapi.com/api/character',
         data: [],
     };
-
+    
     const axiosCharacters = (url) => {
         axios.get(url)
-            .then(response => {
-                setcharacter(response.data.results);
-                settarjetanext(response.data.info.next);
-                settarjetaprev(response.data.info.prev);
-            }).catch((error) => console.log(error))
-
+        .then(response => {
+            setcharacter(response.data.results);
+            settarjetanext(response.data.info.next);
+            settarjetaprev(response.data.info.prev);
+        }).catch((error) => console.log(error))
+        
     };
-
+    
+    
     useEffect(() => {
         axiosCharacters(urlCharacters.url);
     }, [])
 
+    
+    const nuevasCardU = () => {
+        const tarjetasPersonaje = characters.map((personaje) => (
+            <CardU
+                key={personaje.id}
+                name={personaje.name}
+                gender={personaje.gender}
+                species={personaje.species}
+                image={personaje.image}
+                funcion={cerrarTarjeta}
+            />
+        ))
+        setcards(tarjetasPersonaje)
+    }
+    
     const nuevasTarjetasnext = () => {
         tarjetasnext.length >= 1 ? axiosCharacters?.(tarjetasnext)
-            : console.log("No hay más tarjetas!");
+        : console.log("No hay más tarjetas!");
     }
-
+    
     const nuevasTarjetasprev = () => {
         tarjetasprev.length >= 1 ? axiosCharacters?.(tarjetasprev)
-            : console.log("No hay más tarjetas!");
+        : console.log("No hay más tarjetas!");
     }
-
+    
     const cerrarTarjeta = () => {
-        showCard ? setShowCard(false)
-            : console.log("No hay mas tarjetas!");
+        
     }
-    const renderizarf = () => {
-        setShowCard(true);
-    }
-
+    
+    
     const randomCard = () => {
-        const randomNum = Math.floor(Math.random() * characters.length);
-        return (
-            <div
-            className={styles.tarjetas}>
-
-                <CardU
-                    name={characters[randomNum].name}
-                    gender={characters[randomNum].gender}
-                    species={characters[randomNum].species}
-                    image={characters[randomNum].image}
-                    funcion={cerrarTarjeta}
-                />
-
-            </div>
-        )
+        nuevasCardU();
+        const randomNum = Math.floor(Math.random() * cards.length);
+        showCard.push(cards[randomNum]);
     }
-
 
     return (
         <>
@@ -78,7 +79,7 @@ export default function Card() {
 
                 <Buttons
                     infoboton={"Random"}
-                    funcion={renderizarf}>
+                    funcion={randomCard}>
                 </Buttons>
 
                 <Buttons
@@ -87,8 +88,12 @@ export default function Card() {
                 </Buttons>
 
             </div>
-            
-            {showCard ? randomCard() : null}
+
+
+            <div
+                className={styles.tarjetas}>
+                {cards.length >= 1 ? showCard : null}
+            </div>
         </>
     )
-}
+}   
