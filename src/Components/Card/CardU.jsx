@@ -4,7 +4,7 @@ import styles from "../Card/CardU.module.css";
 export default function CardU(props) {
   return (
     <>
-      <div>
+      <div className={styles.glowing}>
         <div className={styles.card}>
           <div className={styles.card2}>
             <button

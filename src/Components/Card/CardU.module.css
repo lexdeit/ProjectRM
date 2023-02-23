@@ -1,4 +1,21 @@
+.glowing {
+  width: 245px;
+  height: 360px;
+  border-radius: 15%;
+  background-color: #00ff75;
+  box-shadow: 0 0 10px 5px #00ff75;
+  animation: glow 1s ease-in-out infinite alternate;
+}
 
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px 5px #00ff75;
+  }
+  to {
+    box-shadow: 0 0 25px 5px #00ff75;
+  }
+}
 
 .card {
   width: 250px;
@@ -77,3 +94,5 @@
   font-size: large;
   cursor: pointer;
 }
+
+/*-------------------------------------------------------------------------------------*/

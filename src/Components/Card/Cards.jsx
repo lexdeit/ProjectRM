@@ -10,16 +10,15 @@ export default function Card() {
     const [cards, setcards] = useState([]);
 
     const axiosCharacters = async (url) => {
-        await axios
-            .get(url)
+        await axios.get(url)
             .then((response) => {
                 let nuevosCaracteres = response.data.results;
                 setcharacter((prevCharacters) => [...prevCharacters, ...nuevosCaracteres]);
 
-                response.data.info.next? 
-                axiosCharacters(response.data.info.next)
-                :console.log("Se cargo toda la base de datos!");
-                
+                response.data.info.next ?
+                    axiosCharacters(response.data.info.next)
+                    : console.log("Se cargo toda la base de datos!");
+
             })
             .catch((error) => console.log(error));
     };
@@ -37,19 +36,19 @@ export default function Card() {
                 species={personaje.species}
                 image={personaje.image}
                 onClick={() => {
-                    setShowCard((prevCards) =>
-                    prevCards.filter((card) => card.key !== personaje.id.toString())
-                    );
-                }}
+                    setShowCard((prevCards) => 
+                    prevCards.filter((card) => 
+                    card.key !== personaje.id.toString()));
+                }
+            }
             />
         ));
-
         setcards(tarjetasPersonaje);
     };
 
     const randomCard = () => {
         cards.length >= 1
-            ? setShowCard([...showCard,cards[Math.floor(Math.random() * cards.length)],])
+            ? setShowCard([...showCard, cards[Math.floor(Math.random() * cards.length)]])
             : nuevasCardU();
     };
 
@@ -59,13 +58,28 @@ export default function Card() {
 
     return (
         <>
-            <div className={styles.botonesr}>
-                <Buttons infoboton={"Eliminar"} funcion={eliminar}/>
-                <Buttons infoboton={"Random"} funcion={randomCard} />
+            <div
+                className={styles.botonesr}>
+
+                <Buttons
+                    infoboton={"Eliminar"}
+                    funcion={eliminar}
+                />
+
+                <Buttons
+                    infoboton={"Random"}
+                    funcion={randomCard}
+                />
+
             </div>
 
-            <div className={styles.tarjetas}>
-                {cards.length >= 1 ? showCard : null}
+            <div
+                className={styles.tarjetas}>
+
+                {
+                    showCard
+                }
+
             </div>
         </>
     );
