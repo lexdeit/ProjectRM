@@ -1,35 +1,22 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import CardU from "./CardU";
 import styles from "../Card/Cards.module.css";
 import Buttons from "../Buttons/Buttons";
+import axiosCharacters from "../API - Peticion/Api";
 
-const axiosCharacters = async (url, setcharacter) => {
-    try {
-        const response = await axios.get(url);
-        const nuevosCaracteres = response.data.results;
-        setcharacter((characters) => [...characters, ...nuevosCaracteres]);
-
-        response.data.info.next ?
-            axiosCharacters(response.data.info.next, setcharacter)
-            : console.log("Se cargo toda la base de datos!");
-
-    } catch (error) {
-        console.log(error);
-    }
-};
 
 export default function Card() {
     const [characters, setcharacter] = useState([]);
     const [showCard, setShowCard] = useState([]);
     const [cards, setcards] = useState([]);
-    
+
 
     useEffect(() => {
         axiosCharacters("https://rickandmortyapi.com/api/character", setcharacter);
     }, []);
-    
+
     const nuevasCardU = () => {
+        console.log("Se ejecuto nuevasCardU");
         setcards(
             characters.map((personaje) => (
                 <CardU
@@ -44,10 +31,12 @@ export default function Card() {
         );
     };
 
+    useEffect(() => {
+        nuevasCardU()
+    }, [characters])
+
     const randomCard = () => {
-        cards.length < 1 ?
-            nuevasCardU()
-            : setShowCard([...showCard, cards[Math.floor(Math.random() * cards.length)]])
+        setShowCard([...showCard, cards[Math.floor(Math.random() * cards.length)]])
     };
 
     const eliminarCard = (id) => {
