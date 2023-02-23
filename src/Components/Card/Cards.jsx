@@ -4,53 +4,58 @@ import CardU from "./CardU";
 import styles from "../Card/Cards.module.css";
 import Buttons from "../Buttons/Buttons";
 
+const axiosCharacters = async (url, setcharacter) => {
+    try {
+        const response = await axios.get(url);
+        const nuevosCaracteres = response.data.results;
+        setcharacter((characters) => [...characters, ...nuevosCaracteres]);
+
+        response.data.info.next ?
+            axiosCharacters(response.data.info.next, setcharacter)
+            : console.log("Se cargo toda la base de datos!");
+
+    } catch (error) {
+        console.log(error);
+    }
+};
+
 export default function Card() {
     const [characters, setcharacter] = useState([]);
     const [showCard, setShowCard] = useState([]);
     const [cards, setcards] = useState([]);
-
-    const axiosCharacters = async (url) => {
-        await axios.get(url)
-            .then((response) => {
-                let nuevosCaracteres = response.data.results;
-                setcharacter((prevCharacters) => [...prevCharacters, ...nuevosCaracteres]);
-
-                response.data.info.next ?
-                    axiosCharacters(response.data.info.next)
-                    : console.log("Se cargo toda la base de datos!");
-
-            })
-            .catch((error) => console.log(error));
-    };
+    
 
     useEffect(() => {
-        axiosCharacters("https://rickandmortyapi.com/api/character");
+        axiosCharacters("https://rickandmortyapi.com/api/character", setcharacter);
     }, []);
-
+    
     const nuevasCardU = () => {
-        const tarjetasPersonaje = characters.map((personaje) => (
-            <CardU
-                key={personaje.id}
-                name={personaje.name}
-                gender={personaje.gender}
-                species={personaje.species}
-                image={personaje.image}
-                onClick={() => {
-                    setShowCard((prevCards) => 
-                    prevCards.filter((card) => 
-                    card.key !== personaje.id.toString()));
-                }
-            }
-            />
-        ));
-        setcards(tarjetasPersonaje);
+        setcards(
+            characters.map((personaje) => (
+                <CardU
+                    key={personaje.id}
+                    name={personaje.name}
+                    gender={personaje.gender}
+                    species={personaje.species}
+                    image={personaje.image}
+                    onClick={() => eliminarCard(personaje.id)}
+                />
+            ))
+        );
     };
 
     const randomCard = () => {
-        cards.length >= 1
-            ? setShowCard([...showCard, cards[Math.floor(Math.random() * cards.length)]])
-            : nuevasCardU();
+        cards.length < 1 ?
+            nuevasCardU()
+            : setShowCard([...showCard, cards[Math.floor(Math.random() * cards.length)]])
     };
+
+    const eliminarCard = (id) => {
+        setShowCard((showCard) =>
+            showCard.filter((card) =>
+                card.key !== `${id}`));
+    };
+
 
     const eliminar = () => {
         setShowCard([])
