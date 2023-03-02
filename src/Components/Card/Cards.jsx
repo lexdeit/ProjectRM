@@ -7,7 +7,6 @@ import { useSelector, useDispatch } from "react-redux";
 
 function Card() {
     const dispatch = useDispatch();
-    const characters = useSelector((state) => state.characters)
     const cards = useSelector((state) => state.cards)
     const showCards = useSelector((state) => state.showCards)
 
@@ -22,14 +21,14 @@ function Card() {
         )
     };
 
-    const eliminarCards = (id) => {
+    const eliminarCards = () => {
         dispatch(
-            eliminarCard(id)
+            eliminarCard()
         )
     };
 
     const status = () => {
-        console.log(characters);
+        console.log(showCards[0].id);
     }
 
     const eliminar = () => {

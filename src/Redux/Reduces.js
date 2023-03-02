@@ -1,4 +1,4 @@
-import { RANDOM_CARD, GET_API, ELIMINAR_CARD } from './Types';
+import { RANDOM_CARD, GET_API, ELIMINAR_CARDS, ELIMINAR } from './Types';
 const initialState = {
     characters: [],
     cards: [],
@@ -17,14 +17,21 @@ function reducer(state = initialState, action) {
         case RANDOM_CARD:
             return {
                 ...state,
-                showCards: [...state.showCards, state.cards[Math.floor(Math.random() * state.cards.length)]]
+                showCards: [...state.showCards, action.payload]
             }
 
-        case ELIMINAR_CARD:
+        case ELIMINAR_CARDS:
             return {
                 ...state,
                 showCards: []
             }
+
+        case ELIMINAR:
+            return {
+                ...state,
+                showCards: state.showCards.filter((card) => card.id !== action.payload)
+            }
+
 
         default: return state;
 
