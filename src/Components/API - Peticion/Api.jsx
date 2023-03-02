@@ -1,12 +1,28 @@
-import axios from "axios";
+// import React from "react";
+// import CardU from "../Card/CardU";
+// import { useSelector, useDispatch } from "react-redux";
+// import { nuevasTarjetas } from "../../Redux/Actions";
 
-export default async function axiosCharacters (url, setcharacter) {
-    let response = await axios.get(url);
-    let nuevosCaracteres = response.data.results;
 
-    setcharacter((characters) => [...characters, ...nuevosCaracteres]);
-    response.data.info.next?
-    axiosCharacters(response.data.info.next, setcharacter)
-    :console.log("Se cargo toda la base de Datos!");
+// const NuevasCardU = async ( eliminarCard ) => {
+//     const dispatch = useDispatch();
+//     const characters = useSelector((state) => state.characters)
+    
 
-}
+//     let generadorTarjetas = characters.map((character) => (
+//         <CardU
+//             key={character.id}
+//             name={character.name}
+//             gender={character.gender}
+//             species={character.species}
+//             image={character.image}
+//             onClick={() => eliminarCard(character.id)}
+//         />
+//     ));
+
+//     dispatch(nuevasTarjetas(generadorTarjetas))
+    
+//     console.log("Se envio la base de datos de tarjetas al estado global");
+// };
+
+// export default NuevasCardU;

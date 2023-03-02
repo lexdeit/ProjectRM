@@ -1,7 +1,9 @@
-const NUEVASTARJETAS = 'NUEVASTARJETAS';
-const AUMENTAR = 'AUMENTAR';
+const RANDOM_CARD = 'RANDOM_CARD';
+const GET_API = 'GET_API';
+const ELIMINAR_CARD = 'ELIMINAR_CARD';
 
-module.exports = {
-    NUEVASTARJETAS,
-    AUMENTAR
+export {
+    RANDOM_CARD,
+    GET_API,
+    ELIMINAR_CARD
 }

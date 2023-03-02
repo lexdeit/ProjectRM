@@ -1,53 +1,39 @@
-import React, { useEffect, useState } from "react";
-import CardU from "./CardU";
+import React, { useEffect } from "react";
 import styles from "../Card/Cards.module.css";
 import Buttons from "../Buttons/Buttons";
-import axiosCharacters from "../API - Peticion/Api";
+import { getApi, randomCardR, eliminarCard} from '../../Redux/Actions'
+import { useSelector, useDispatch } from "react-redux";
 
 
-export default function Card() {
-    const [characters, setcharacter] = useState([]);
-    const [showCard, setShowCard] = useState([]);
-    const [cards, setcards] = useState([]);
-
+function Card() {
+    const dispatch = useDispatch();
+    const characters = useSelector((state) => state.characters)
+    const cards = useSelector((state) => state.cards)
+    const showCards = useSelector((state) => state.showCards)
 
     useEffect(() => {
-        axiosCharacters("https://rickandmortyapi.com/api/character", setcharacter);
+        dispatch(getApi('https://rickandmortyapi.com/api/character'));
     }, []);
 
-    const nuevasCardU = () => {
-        console.log("Se ejecuto nuevasCardU");
-        setcards(
-            characters.map((personaje) => (
-                <CardU
-                    key={personaje.id}
-                    name={personaje.name}
-                    gender={personaje.gender}
-                    species={personaje.species}
-                    image={personaje.image}
-                    onClick={() => eliminarCard(personaje.id)}
-                />
-            ))
-        );
-    };
-
-    useEffect(() => {
-        nuevasCardU()
-    }, [characters])
 
     const randomCard = () => {
-        setShowCard([...showCard, cards[Math.floor(Math.random() * cards.length)]])
+        dispatch(
+            randomCardR(cards[Math.floor(Math.random() * cards.length)])
+        )
     };
 
-    const eliminarCard = (id) => {
-        setShowCard((showCard) =>
-            showCard.filter((card) =>
-                card.key !== `${id}`));
+    const eliminarCards = (id) => {
+        dispatch(
+            eliminarCard(id)
+        )
     };
 
+    const status = () => {
+        console.log(characters);
+    }
 
     const eliminar = () => {
-        setShowCard([])
+
     };
 
     return (
@@ -57,12 +43,22 @@ export default function Card() {
 
                 <Buttons
                     infoboton={"Eliminar"}
-                    funcion={eliminar}
+                    funcion={eliminarCards}
                 />
 
                 <Buttons
                     infoboton={"Random"}
                     funcion={randomCard}
+                />
+
+                <Buttons
+                    infoboton={"RandomCardR"}
+                    funcion={() => { randomCardR() }}
+                />
+
+                <Buttons
+                    infoboton={"Status"}
+                    funcion={() => { status() }}
                 />
 
             </div>
@@ -71,10 +67,12 @@ export default function Card() {
                 className={styles.tarjetas}>
 
                 {
-                    showCard
+                    showCards
                 }
 
             </div>
         </>
     );
 }
+
+export default Card;
