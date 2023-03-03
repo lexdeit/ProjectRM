@@ -29,7 +29,8 @@ function reducer(state = initialState, action) {
         case ELIMINAR:
             return {
                 ...state,
-                showCards: state.showCards.filter((card) => card.id !== action.payload)
+                showCards: state.showCards.filter((card) =>
+                    card.key !== `${action.payload}`)
             }
 
 
