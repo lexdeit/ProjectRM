@@ -32,11 +32,12 @@ function reducer(state = initialState, action) {
                 showCards: state.showCards.filter((card) =>
                     card.key !== `${action.payload}`)
             }
+
         case BUSCAR_CARD:
             return {
                 ...state,
-                showCards: state.cards.filter((card) =>
-                card.key === `${action.payload}`)
+                showCards: [...state.showCards,
+                ...state.cards.filter((card) => card.key === `${action.payload}`)]
             }
 
 
