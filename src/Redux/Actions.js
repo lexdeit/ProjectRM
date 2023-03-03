@@ -1,7 +1,7 @@
 import axios from "axios";
 import React from "react";
 import CardU from "../Components/Card/CardU";
-import { RANDOM_CARD, GET_API, ELIMINAR_CARDS, ELIMINAR } from "./Types";
+import { RANDOM_CARD, GET_API, ELIMINAR_CARDS, ELIMINAR, BUSCAR_CARD } from "./Types";
 
 
 export const getApi = (url) => {
@@ -46,6 +46,13 @@ export const eliminarCard = () => {
 export const eliminar = (id) => {
     return {
         type: ELIMINAR,
+        payload: id
+    }
+}
+
+export const buscarId = (id) => {
+    return {
+        type: BUSCAR_CARD,
         payload: id
     }
 }

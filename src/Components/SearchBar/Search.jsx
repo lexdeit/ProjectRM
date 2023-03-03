@@ -9,7 +9,7 @@ export default function SearchBar(props) {
         <>
             <div className={styles.div}>
 
-                <input placeholder="Introduce ID" type="text" className={styles.input} required="" />
+                <input placeholder="Introduce ID" type="text" className={styles.input} required=""/>
             </div>
         </>
     )
