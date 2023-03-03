@@ -7,7 +7,7 @@ export default function CardU(props) {
 
   return (
     <>
-      <div className={styles.glowing}>
+      
         <div className={styles.card}>
           <div className={styles.card2}>
             <button
@@ -22,7 +22,7 @@ export default function CardU(props) {
             <h3 className={styles.texto}>Gender: {props.gender}</h3>
           </div>
         </div>
-      </div>
+      
     </>
   );
 }

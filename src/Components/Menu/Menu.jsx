@@ -1,8 +1,8 @@
 import React from 'react';
 import Buttons from '../Buttons/Buttons';
-import styles from '../Menu/Menu.module.css'
+import styles from '../Menu/Menu.module.css';
 import SearchBar from '../SearchBar/Search';
-import { randomCardR, eliminarCard } from '../../Redux/Actions'
+import { randomCardR, eliminarCard } from '../../Redux/Actions';
 import { useSelector, useDispatch } from "react-redux";
 
 function MenuHome() {
