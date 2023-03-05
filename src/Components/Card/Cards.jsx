@@ -1,10 +1,12 @@
 import React from "react";
 import styles from "../Card/Cards.module.css";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import Loading from "../Loading/Loading";
 
 
 function Card() {
     const showCards = useSelector((state) => state.showCards)
+    const cards = useSelector((state) => state.cards)
 
 
     return (
@@ -13,7 +15,7 @@ function Card() {
                 className={styles.tarjetas}>
 
                 {
-                    showCards
+                    cards.length < 1652 ? <Loading /> : showCards
                 }
 
             </div>

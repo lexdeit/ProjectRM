@@ -16,12 +16,13 @@ function Homepage () {
         return (
             <>
                 <MenuHome />
+
                 <div
-                    className={styles.background}>
+                className={styles.background}>
 
                     <div>
-                        <SearchBar></SearchBar>
-                        <Card />
+                        <SearchBar/>
+                        <Card/>
                     </div>
 
                 </div>

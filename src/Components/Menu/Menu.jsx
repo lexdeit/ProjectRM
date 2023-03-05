@@ -23,7 +23,9 @@ function MenuHome() {
 
                         <Buttons
                             infoboton={"Inicio"}
-                            funcion={() => {}}
+                            funcion={() => {
+                                alert("Simulando inicio")
+                            }}
                         />
 
                         <Buttons
