@@ -48,6 +48,10 @@ function MenuHome() {
                             infoboton={"Contacto"}
                         />
 
+                        <Buttons
+                            infoboton={"Favorites"}
+                        />
+
                         <SearchBar></SearchBar>
                     </ul>
                 </nav>

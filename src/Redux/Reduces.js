@@ -1,8 +1,9 @@
-import { RANDOM_CARD, GET_API, ELIMINAR_CARDS, ELIMINAR, BUSCAR_CARD } from './Types';
+import { RANDOM_CARD, GET_API, ELIMINAR_CARDS, ELIMINAR, BUSCAR_CARD, FAVORITES_CARD } from './Types';
 const initialState = {
     characters: [],
     cards: [],
-    showCards: []
+    showCards: [],
+    favorites: []
 }
 
 function reducer(state = initialState, action) {
@@ -36,8 +37,15 @@ function reducer(state = initialState, action) {
         case BUSCAR_CARD:
             return {
                 ...state,
-                showCards: [...state.showCards, 
-                    ...state.cards.filter((card) => card.key === `${action.payload}`)]
+                showCards: [...state.showCards,
+                ...state.cards.filter((card) => card.key === `${action.payload}`)]
+            }
+
+        case FAVORITES_CARD:
+            return {
+                ...state,
+                favorites: state.cards.filter((card) =>
+                    card.key === `${action.payload}`)
             }
 
 

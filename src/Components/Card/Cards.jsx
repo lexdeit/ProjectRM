@@ -7,6 +7,7 @@ import Loading from "../Loading/Loading";
 function Card() {
     const showCards = useSelector((state) => state.showCards)
     const cards = useSelector((state) => state.cards)
+    const favorites = useSelector((state) => state.favorites)
 
 
     return (

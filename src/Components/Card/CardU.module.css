@@ -71,13 +71,20 @@
 
 
 .btn {
-  /* margin-top: 3%;
-  margin-left: 4%;
-  padding: 0%; */
   background-color: transparent;
   border-color: transparent;
   font-size: large;
   cursor: pointer;
 }
 
+
+.btnlike {
+  background-color: transparent;
+  border-color: transparent;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0% 0% 0% 85%;
+  margin-top: -10%;
+}
 /*-------------------------------------------------------------------------------------*/
+
