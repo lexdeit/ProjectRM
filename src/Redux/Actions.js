@@ -16,6 +16,7 @@ export const getApi = (url) => {
                     key={character.id}
                     name={character.name}
                     gender={character.gender}
+                    origin={character.origin.name}  
                     species={character.species}
                     image={character.image}
                     funcion={() => dispatch(eliminar(character.id))}

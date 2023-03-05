@@ -3,7 +3,7 @@ import styles from "../Card/CardU.module.css";
 import Like from "../Like and Close/Like";
 
 
-export default function CardU(props) {
+export default function CardU({name, image, species, gender, origin, funcion, like}) {
 
 
   return (
@@ -13,16 +13,17 @@ export default function CardU(props) {
 
         <div className={styles.card2}>
 
-          <button className={styles.btn} onClick={props.funcion}>❌</button>
+          <button className={styles.btn} onClick={funcion}>❌</button>
 
           <div className={styles.btnlike}>
-          <Like like={props.like}/>
+          <Like like={like}/>
           </div>
 
-          <h2 className={styles.informacion}>{props.name}</h2>
-          <img className={styles.imagen} src={props.image} alt={props.name} />
-          <h3 className={styles.texto}>Species: {props.species}</h3>
-          <h3 className={styles.texto}>Gender: {props.gender}</h3>
+          <h2 className={styles.informacion}>{name}</h2>
+          <img className={styles.imagen} src={image} alt={name} />
+          <h3 className={styles.texto}>Species: {species}</h3>
+          <h3 className={styles.texto}>Gender: {gender}</h3>
+          <h3 className={styles.texto}>Origin: {origin}</h3>
         </div>
       </div>
 
