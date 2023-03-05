@@ -4,7 +4,7 @@ import styles from "../../Components/SearchBar/Search.module.css";
 import { buscarId } from "../../Redux/Actions";
 import Buttons from "../Buttons/Buttons";
 
-export default function SearchBar(props) {
+export default function SearchBar() {
     const [ida, setida] = useState('')
     const dispatch = useDispatch();
 

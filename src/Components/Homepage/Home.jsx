@@ -1,19 +1,18 @@
-import React from "react";
-import styles from "../Homepage/Home.module.css"
+import  { React , useEffect } from "react";
+import styles from "../Homepage/Home.module.css";
 import SearchBar from "../SearchBar/Search";
 import Card from "../Card/Cards";
 import MenuHome from "../Menu/Menu";
+import { useDispatch } from "react-redux";
+import { getApi } from "../../Redux/Actions";
 
-export default class Homepage extends React.Component {
-    constructor(props) {
-        super(props)
-        this.props = props;
-        this.state = {
+function Homepage () {
 
-        }
-    }
-
-    render() {
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(getApi('https://rickandmortyapi.com/api/character'));
+    }, []);
+    
         return (
             <>
                 <MenuHome />
@@ -29,5 +28,7 @@ export default class Homepage extends React.Component {
 
             </>
         )
-    }
+    
 }
+
+export default Homepage;
