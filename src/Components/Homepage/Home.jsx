@@ -1,6 +1,5 @@
 import  { React , useEffect } from "react";
 import styles from "../Homepage/Home.module.css";
-import SearchBar from "../SearchBar/Search";
 import Card from "../Card/Cards";
 import MenuHome from "../Menu/Menu";
 import { useDispatch } from "react-redux";
@@ -15,13 +14,12 @@ function Homepage () {
     
         return (
             <>
-                <MenuHome />
 
                 <div
                 className={styles.background}>
+                <MenuHome />
 
                     <div>
-                        <SearchBar/>
                         <Card/>
                     </div>
 

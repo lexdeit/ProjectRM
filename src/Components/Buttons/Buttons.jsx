@@ -1,16 +1,16 @@
 import React from "react";
 import styles from "./Buttons.module.css"
 
-export default function Buttons(props) {
+export default function Buttons({funcion, infoboton}) {
 
 
     return (
         <>
             <button
                 className={styles.btn}
-                onClick={props.funcion}>
+                onClick={funcion}>
 
-                {props.infoboton}
+                {infoboton}
             </button>
 
         </>
