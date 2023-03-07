@@ -18,8 +18,7 @@ function Homepage () {
                 <div
                 className={styles.background}>
                 <MenuHome />
-
-                    <div>
+                    <div>       
                         <Card/>
                     </div>
 

@@ -18,7 +18,7 @@ function MenuHome() {
                 <nav className={styles.menu}>
                     <ul className={styles.texto}>
                         <img
-                            src='https://image.tmdb.org/t/p/original/kCyZc7mvqHdeUGpguSGxsWPxqpI.png'
+                            src="logo.png"
                             className={styles.logo} />
 
                         <Buttons

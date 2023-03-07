@@ -15,7 +15,7 @@ function Card() {
                 className={styles.tarjetas}>
 
                 {
-                    showCards
+                    cards.length < 1652 ? <Loading /> : showCards
                 }
 
             </div>
