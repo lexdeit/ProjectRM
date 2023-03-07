@@ -1,28 +1,9 @@
-
-
 .background {
     background: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.6)), 
-    url("https://images.hdqwalls.com/download/rick-and-morty-season-4-qk-2880x1800.jpg");
-    background-repeat: no-repeat;
+    url("../../../public/rick-and-morty-season-4-qk-2880x1800\ \(1\).jpg");
     background-size: cover;
+    background-position: center;
     height: 100vh;
     width: 100vw;
-}
-
-.titulo {
-    font-family: Poppins;
-    font-size: 5em;
-    text-align: center;
-    color: white;
     margin: 0%;
-    padding: 0%;
-}
-
-.subtitulo {
-    font-family: Poppins;
-    font-size: 2em;
-    text-align: center;
-    color: white;
-    margin: 0%;
-    padding: 0%;
 }
