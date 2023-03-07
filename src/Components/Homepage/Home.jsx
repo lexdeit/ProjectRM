@@ -1,10 +1,10 @@
 import  { React , useEffect } from "react";
 import styles from "../Homepage/Home.module.css";
-import SearchBar from "../SearchBar/Search";
 import Card from "../Card/Cards";
 import MenuHome from "../Menu/Menu";
 import { useDispatch } from "react-redux";
 import { getApi } from "../../Redux/Actions";
+import About from "../About/About";
 
 function Homepage () {
 
@@ -21,8 +21,8 @@ function Homepage () {
                 className={styles.background}>
 
                     <div>
-                        <SearchBar/>
-                        <Card/>
+                        <Card/> 
+                        <About/>
                     </div>
 
                 </div>

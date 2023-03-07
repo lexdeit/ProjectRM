@@ -6,8 +6,7 @@ import Loading from "../Loading/Loading";
 
 function Card() {
     const showCards = useSelector((state) => state.showCards)
-    const cards = useSelector((state) => state.cards)
-    const favorites = useSelector((state) => state.favorites)
+    const characters = useSelector((state) => state.characters)
 
 
     return (
@@ -16,7 +15,7 @@ function Card() {
                 className={styles.tarjetas}>
 
                 {
-                    cards.length < 1652 ? <Loading /> : showCards
+                    characters.length < 1652 ? <Loading /> : showCards
                 }
 
             </div>

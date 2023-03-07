@@ -1,18 +1,21 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import styles from "../../Components/SearchBar/Search.module.css";
 import { buscarId } from "../../Redux/Actions";
 import Buttons from "../Buttons/Buttons";
 
 export default function SearchBar() {
+    const characters = useSelector((state) => state.characters)
     const [ida, setida] = useState('')
     const dispatch = useDispatch();
 
 
-    const enviarID = (ida) => {
-        console.log("Me ejecute!");
+    const enviarID = (characters, ida) => {
+        let seencontro = characters.find(character => character.id == ida ? character : console.log("Buscando..."))
         dispatch(
-            buscarId(ida)
+            buscarId(
+                seencontro
+            )
         )
     }
 
@@ -36,8 +39,8 @@ export default function SearchBar() {
 
             </div>
                 <Buttons
-                infoboton={"🔎"}
-                funcion={() => {enviarID(ida)}}
+                infoboton={"SEARCH 🔎"}
+                funcion={() => {enviarID(characters ,ida)}}
                 />
         </>
     )

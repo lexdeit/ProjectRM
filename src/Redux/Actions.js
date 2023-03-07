@@ -1,7 +1,7 @@
-import axios from "axios";
 import React from "react";
 import CardU from "../Components/Card/CardU";
-import { RANDOM_CARD, GET_API, ELIMINAR_CARDS, ELIMINAR, BUSCAR_CARD, FAVORITES_CARD } from "./Types";
+import axios from "axios";
+import { ADD_CARD, GET_API, ELIMINAR_CARDS, ELIMINAR, FAVORITES_CARD } from "./Types";
 
 
 export const getApi = (url) => {
@@ -11,18 +11,7 @@ export const getApi = (url) => {
 
         dispatch({
             type: GET_API,
-            payload: nuevosCaracteres.map((character) => (
-                <CardU
-                    key={character.id}
-                    name={character.name}
-                    gender={character.gender}
-                    origin={character.origin.name}  
-                    species={character.species}
-                    image={character.image}
-                    funcion={() => dispatch(eliminar(character.id))}
-                    like={() => dispatch(addFavorites(character.id))}
-                />
-            ))
+            payload: nuevosCaracteres
         });
 
         response.data.info.next ?
@@ -31,12 +20,25 @@ export const getApi = (url) => {
     };
 };
 
-export const randomCardR = (randomCard) => {
-    return {
-        type: RANDOM_CARD,
-        payload: randomCard
-    }
-}
+export const addCard = (character) => (dispatch) => {
+    let nuevaCard =
+        <CardU
+            key={character.id}
+            name={character.name}
+            gender={character.gender}
+            origin={character.origin.name}
+            species={character.species}
+            image={character.image}
+            funcion={() => dispatch(eliminar(character.id))}
+            like={() => dispatch(addFavorites(character.id))}
+        />
+
+    dispatch({
+        type: ADD_CARD,
+        payload: nuevaCard
+    });
+};
+
 
 
 export const eliminarCard = () => {
@@ -52,11 +54,24 @@ export const eliminar = (id) => {
     }
 }
 
-export const buscarId = (id) => {
-    return {
-        type: BUSCAR_CARD,
-        payload: id
-    }
+export const buscarId = (character) => (dispatch) => {
+    let card =
+        <CardU
+            key={character.id}
+            name={character.name}
+            gender={character.gender}
+            origin={character.origin.name}
+            species={character.species}
+            image={character.image}
+            funcion={() => dispatch(eliminar(character.id))}
+            like={() => dispatch(addFavorites(character.id))}
+        />
+
+    dispatch({
+        type: ADD_CARD,
+        payload: card
+    });
+
 }
 
 export const addFavorites = (id) => {

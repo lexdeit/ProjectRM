@@ -1,0 +1,56 @@
+.card {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    width: 35em;
+    height: 22.5em;
+    background: #17171755;
+    transition: 100ms ease-in-out;
+    border-radius: 5%;
+    backdrop-filter: blur(10px);
+}
+
+
+
+.card:hover {
+    transform: scale(0.95);
+    transition: 100ms;
+}
+
+.card span {
+    font-family: Poppins;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    display: block;
+    padding-top: 1em;
+    font-size: 2em;
+}
+
+.card .info {
+    font-weight: 400;
+    color: white;
+    display: block;
+    text-align: center;
+    padding-top: 0.1em;
+    font-size: 1em;
+    margin: 1em;
+    margin-top: 1em;
+}
+
+.img {
+    width: 75px;
+    height: fit-content;
+    border-radius: 50%;
+    align-items: center;
+    justify-items: center;
+    display: flex;
+    margin: 0 auto 0 auto;
+}
+
+
+.card .share {
+    align-items: center;
+    display: flex;
+    gap: 5px;
+}

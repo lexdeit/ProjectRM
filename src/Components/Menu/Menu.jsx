@@ -2,12 +2,12 @@ import React from 'react';
 import Buttons from '../Buttons/Buttons';
 import styles from '../Menu/Menu.module.css';
 import SearchBar from '../SearchBar/Search';
-import { randomCardR, eliminarCard } from '../../Redux/Actions';
+import { addCard, eliminarCard } from '../../Redux/Actions';
 import { useSelector, useDispatch } from "react-redux";
 
 function MenuHome() {
     const dispatch = useDispatch();
-    const cards = useSelector((state) => state.cards)
+    const characters = useSelector((state) => state.characters);
 
 
 
@@ -22,34 +22,35 @@ function MenuHome() {
                             className={styles.logo} />
 
                         <Buttons
-                            infoboton={"Inicio"}
+                            infoboton={"HOME"}
                             funcion={() => {
                                 alert("Simulando inicio")
                             }}
                         />
 
                         <Buttons
-                            infoboton={"Tarjeta Random"}
+                            infoboton={"RANDOM CARD"}
                             funcion={() => {
-                                dispatch(randomCardR(
-                                    cards[Math.floor(Math.random() * cards.length)]
+                                dispatch(addCard(
+                                    characters[Math.floor(Math.random() * characters.length)]
                                 ))
                             }}
                         />
 
                         <Buttons
-                            infoboton={"Eliminar Tarjetas"}
+                            infoboton={"FAVORITES"}
+                        />
+                        
+                        <Buttons
+                            infoboton={"DELETE CARDS"}
                             funcion={() => {
                                 dispatch(eliminarCard())
                             }}
                         />
 
-                        <Buttons
-                            infoboton={"Contacto"}
-                        />
 
                         <Buttons
-                            infoboton={"Favorites"}
+                            infoboton={"ABOUT ME"}
                         />
 
                         <SearchBar></SearchBar>
