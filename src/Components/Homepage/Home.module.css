@@ -3,7 +3,7 @@
     width: 100vw;
     height: 100vh;
     z-index: 0;
-    background-color: rgba(0, 0, 0, 0.69);
+    background-color: rgba(0, 0, 0, 0.50);
 }
 
 iframe {
@@ -15,10 +15,7 @@ iframe {
   }
 
 .centrado {
-    margin-top: 100px;
     display: flex;
     justify-content: center;
     gap: 3em;
-    margin-bottom: 2em;
-    padding-top: 2em;
 }

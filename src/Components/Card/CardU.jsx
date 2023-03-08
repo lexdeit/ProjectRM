@@ -9,11 +9,11 @@ export default function CardU({name, image, species, gender, origin, funcion, li
   return (
     <>
 
-      <div className={styles.card}>
+      <div className={styles.container}>
 
         <div className={styles.card2}>
 
-          <button className={styles.btn} onClick={funcion}>❌</button>
+          <button className={styles.btn} onClick={funcion}> <span className={styles.close}></span> </button>
 
           <div className={styles.btnlike}>
           <Like like={like}/>
