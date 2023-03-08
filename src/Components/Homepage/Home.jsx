@@ -2,10 +2,8 @@ import { React, useEffect } from "react";
 import styles from "../Homepage/Home.module.css";
 import Card from "../Card/Cards";
 import MenuHome from "../Menu/Menu";
-import Loading from "../Loading/Loading";
 import { useDispatch } from "react-redux";
 import { getApi } from "../../Redux/Actions";
-import About from "../About/About";
 
 function Homepage() {
 

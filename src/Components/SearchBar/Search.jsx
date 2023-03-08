@@ -11,10 +11,12 @@ export default function SearchBar() {
 
 
     const enviarID = (characters, ida) => {
-        let seencontro = characters.find(character => character.id == ida ? character : console.log("Buscando..."))
         dispatch(
             buscarId(
-                seencontro
+                characters.find(character => 
+                    `${character.id}` === ida 
+                    ? character 
+                    : console.log("Buscando..."))
             )
         )
     }
@@ -40,7 +42,7 @@ export default function SearchBar() {
             </div>
                 <Buttons
                 infoboton={"SEARCH 🔎"}
-                funcion={() => {enviarID(characters ,ida)}}
+                funcion={ () => enviarID(characters ,ida) }
                 />
         </>
     )
