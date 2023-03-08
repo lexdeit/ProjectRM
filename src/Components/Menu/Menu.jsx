@@ -2,7 +2,7 @@ import React from 'react';
 import Buttons from '../Buttons/Buttons';
 import styles from '../Menu/Menu.module.css';
 import SearchBar from '../SearchBar/Search';
-import { addCard, eliminarCard, aboutMe } from '../../Redux/Actions';
+import { addCard, eliminarCard, aboutMe, home } from '../../Redux/Actions';
 import { useSelector, useDispatch } from "react-redux";
 
 function MenuHome() {
@@ -21,9 +21,7 @@ function MenuHome() {
 
                         <Buttons
                             infoboton={"HOME"}
-                            funcion={() => {
-                                alert("Simulando inicio")
-                            }}
+                            funcion={() => dispatch(home())}
                         />
 
                         <Buttons
@@ -52,7 +50,7 @@ function MenuHome() {
                             funcion={() => dispatch(aboutMe())}
                         />
 
-                        <SearchBar></SearchBar>
+                        <SearchBar/>
                     </ul>
                 </nav>
 

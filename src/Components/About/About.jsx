@@ -9,7 +9,7 @@ function About() {
             <div className={styles.card}>
 
                 <img className={styles.img}
-                    src="https://avatars.githubusercontent.com/u/115962817?v=4" />
+                    src="Compressed.jpg" />
 
                 <div className={styles.codeloader}>
                     <span>{`{`}</span>

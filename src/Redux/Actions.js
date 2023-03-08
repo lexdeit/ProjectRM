@@ -1,7 +1,7 @@
 import React from "react";
 import CardU from "../Components/Card/CardU";
 import axios from "axios";
-import { DELETE_ABOUT_ME, SHOW_ABOUT_ME, ADD_CARD, GET_API, ELIMINAR_CARDS, ELIMINAR, FAVORITES_CARD } from "./Types";
+import { DELETE_ALL, SHOW_ABOUT_ME, ADD_CARD, GET_API, ELIMINAR_CARDS, ELIMINAR, FAVORITES_CARD } from "./Types";
 import About from "../Components/About/About";
 
 
@@ -86,5 +86,11 @@ export const aboutMe = () => {
     return {
         type: SHOW_ABOUT_ME,
         payload: <About/>
+    }
+}
+
+export const home = () => {
+    return {
+        type: DELETE_ALL
     }
 }

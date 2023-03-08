@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "../../Components/SearchBar/Search.module.css";
 import { buscarId } from "../../Redux/Actions";
-import Buttons from "../Buttons/Buttons";
 
 export default function SearchBar() {
     const characters = useSelector((state) => state.characters)
@@ -40,10 +39,7 @@ export default function SearchBar() {
                 />
 
             </div>
-                <Buttons
-                infoboton={"SEARCH 🔎"}
-                funcion={ () => enviarID(characters ,ida) }
-                />
+            <span className={styles.lupa} onClick={() => enviarID(characters ,ida)}></span>
         </>
     )
 

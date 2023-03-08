@@ -1,4 +1,4 @@
-import { DELETE_ABOUT_ME, SHOW_ABOUT_ME, ADD_CARD, GET_API, ELIMINAR_CARDS, ELIMINAR, BUSCAR_CARD, FAVORITES_CARD } from './Types';
+import { DELETE_ALL, SHOW_ABOUT_ME, ADD_CARD, GET_API, ELIMINAR_CARDS, ELIMINAR, BUSCAR_CARD, FAVORITES_CARD } from './Types';
 const initialState = {
     characters: [],
     cards: [],
@@ -57,6 +57,13 @@ function reducer(state = initialState, action) {
                 showCards: [],
                 aboutMea: [action.payload]
             }
+
+        case DELETE_ALL:
+            return {
+                ...state,
+                showCards: [],
+                aboutMea: []
+            } 
 
 
         default: return state;
