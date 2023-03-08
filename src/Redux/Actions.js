@@ -31,7 +31,14 @@ export const addCard = (character) => (dispatch) => {
             species={character.species}
             image={character.image}
             funcion={() => dispatch(eliminar(character.id))}
-            like={() => dispatch(addFavorites(character.id))}
+            like={() => dispatch(addFavorites({
+                id: character.id,
+                name: character.name,
+                gender: character.gender,
+                origin: character.origin.name,
+                species: character.species,
+                image: character.image
+            }))}
         />
 
     dispatch({
@@ -66,7 +73,7 @@ export const buscarId = (character) => (dispatch) => {
             image={character.image}
             funcion={() => dispatch(eliminar(character.id))}
             like={() => dispatch(addFavorites(character.id))}
-        />
+        />;
 
     dispatch({
         type: ADD_CARD,
@@ -75,10 +82,10 @@ export const buscarId = (character) => (dispatch) => {
 
 }
 
-export const addFavorites = (id) => {
+export const addFavorites = (card) => {
     return {
         type: FAVORITES_CARD,
-        payload: id
+        payload: card
     }
 }
 
