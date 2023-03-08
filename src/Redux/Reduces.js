@@ -48,7 +48,7 @@ function reducer(state = initialState, action) {
         case FAVORITES_CARD:
             return {
                 ...state,
-                favorites: [...state.favorites]
+                favorites: [...state.favorites, action.payload]
             }
 
         case SHOW_ABOUT_ME:
