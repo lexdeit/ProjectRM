@@ -8,3 +8,12 @@
     margin: 0%;
     background-attachment: fixed;
 }
+
+.centrado {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    gap: 3em;
+    margin-bottom: 2em;
+    padding-top: 2em;
+}

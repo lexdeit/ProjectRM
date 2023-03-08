@@ -1,9 +1,10 @@
-import { ADD_CARD, GET_API, ELIMINAR_CARDS, ELIMINAR, BUSCAR_CARD, FAVORITES_CARD } from './Types';
+import { DELETE_ABOUT_ME, SHOW_ABOUT_ME, ADD_CARD, GET_API, ELIMINAR_CARDS, ELIMINAR, BUSCAR_CARD, FAVORITES_CARD } from './Types';
 const initialState = {
     characters: [],
     cards: [],
     showCards: [],
-    favorites: []
+    favorites: [],
+    aboutMea: []
 }
 
 function reducer(state = initialState, action) {
@@ -18,6 +19,7 @@ function reducer(state = initialState, action) {
         case ADD_CARD:
             return {
                 ...state,
+                aboutMea: [],
                 showCards: [...state.showCards, action.payload]
             }
 
@@ -37,6 +39,7 @@ function reducer(state = initialState, action) {
         case BUSCAR_CARD:
             return {
                 ...state,
+                aboutMea: [],
                 showCards: state.characters.filter((character) =>
                 character.id === `${action.payload}`)
             }
@@ -48,6 +51,12 @@ function reducer(state = initialState, action) {
                 favorites: [...state.favorites]
             }
 
+        case SHOW_ABOUT_ME:
+            return {
+                ...state,
+                showCards: [],
+                aboutMea: [action.payload]
+            }
 
 
         default: return state;

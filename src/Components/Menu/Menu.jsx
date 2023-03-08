@@ -2,14 +2,12 @@ import React from 'react';
 import Buttons from '../Buttons/Buttons';
 import styles from '../Menu/Menu.module.css';
 import SearchBar from '../SearchBar/Search';
-import { addCard, eliminarCard } from '../../Redux/Actions';
+import { addCard, eliminarCard, aboutMe } from '../../Redux/Actions';
 import { useSelector, useDispatch } from "react-redux";
 
 function MenuHome() {
     const dispatch = useDispatch();
     const characters = useSelector((state) => state.characters);
-
-
 
     return (
         <>
@@ -51,6 +49,7 @@ function MenuHome() {
 
                         <Buttons
                             infoboton={"ABOUT ME"}
+                            funcion={() => dispatch(aboutMe())}
                         />
 
                         <SearchBar></SearchBar>
