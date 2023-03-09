@@ -4,6 +4,7 @@ import Card from "../Card/Cards";
 import MenuHome from "../Menu/Menu";
 import { useDispatch, useSelector } from "react-redux";
 import { getApi } from "../../Redux/Actions";
+import Mobilemenu from "../Menu/MobileMenu";
 
 function Homepage() {
     const aboutMea = useSelector((state) => state.aboutMea);
@@ -26,6 +27,7 @@ function Homepage() {
                 </div>
 
             </div>
+            <Mobilemenu></Mobilemenu>
 
         </>
     )

@@ -1,4 +1,4 @@
-/* Estilos base para pantallas grandes */
+
 .containermenu {
   display: flex;
   justify-content: center;
@@ -48,34 +48,35 @@
 
 @keyframes scale {
   from {
-      transform: scale(1);
+    transform: scale(1);
   }
+
   to {
-      transform: scale(1.1);
+    transform: scale(1.1);
   }
 }
 
-/* Estilos para pantallas más pequeñas */
-@media screen and (max-width: 768px) {
+.mobile{
+  display: none;
+}
 
-  /* Cambios en la disposición del menú */
+@media screen and (max-width: 1000px) {
+
   .containermenu {
-      flex-direction: column;
+    display: none;
+    flex-direction: column;
   }
 
-  /* Ajuste del tamaño de la fuente */
   .texto {
-      font-size: 16px;
+    font-size: 16px;
   }
 
-  /* Ajuste del espacio entre elementos del menú */
   .texto {
-      gap: 10px;
+    gap: 10px;
   }
 
-  /* Ajuste del tamaño del logo */
   .logo {
-      width: 100px;
+    width: 100px;
   }
 
 }

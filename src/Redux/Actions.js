@@ -72,7 +72,7 @@ export const buscarId = (character) => (dispatch) => {
             species={character.species}
             image={character.image}
             funcion={() => dispatch(eliminar(character.id))}
-            like={() => dispatch(addFavorites(character.id))}
+            like={() => dispatch(addFavorites(character))}
         />;
 
     dispatch({

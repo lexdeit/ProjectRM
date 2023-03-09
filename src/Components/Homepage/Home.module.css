@@ -21,20 +21,23 @@ iframe {
     gap: 3em;
 }
 
-/* Estilos para pantallas más pequeñas */
+
 @media screen and (max-width: 1000px) {
 
-    /* Cambios en el tamaño del fondo */
+
     .background {
-        background-size: cover;
+        background-size: fixed;
+        position: center;
+        background-image: url('wallpaper.jpg');
+        background-color: rgba(0, 0, 0, 0.50);
     }
 
-    /* Ajuste del tamaño del iframe */
+
     iframe {
-        transform: scale(3);
+        display: none;
     }
 
-    /* Ajuste del espacio entre elementos centrados */
+
     .centrado {
         gap: 1em;
     }
