@@ -16,13 +16,13 @@ function Homepage() {
     return (
         <>
             <iframe src="https://www.youtube.com/embed/CB7wInCJ-DI?&autoplay=1&loop=1&mute=1&showinfo=0&controls=0"></iframe>
-            <div className={styles.background}>
-
                 <MenuHome />
 
                 <div className={styles.centrado}>
                     {aboutMea}
+
                     <Card />
+            <div className={styles.background}>
                 </div>
 
             </div>
