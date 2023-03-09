@@ -49,3 +49,19 @@ input:hover {
     transition: 200ms;
     transform: scale(1.30);
 }
+
+@media only screen and (max-width: 768px) {
+    .div {
+    flex-direction: column;
+    align-items: center;
+    }
+    
+    .input {
+    width: 80%;
+    margin-bottom: 1rem;
+    }
+    
+    .lupa {
+    margin-top: 1rem;
+    }
+    }

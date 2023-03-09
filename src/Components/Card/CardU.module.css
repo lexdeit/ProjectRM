@@ -103,3 +103,15 @@
   transition: 200ms;
 }
 
+
+
+/* Estilos para pantallas pequeñas */
+@media only screen and (max-width: 768px) {
+  .card2 {
+    backdrop-filter: blur(5px);
+    width: 250px;
+    height: 425px;
+  }
+}
+
+

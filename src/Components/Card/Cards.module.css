@@ -1,3 +1,4 @@
+/* Estilos base para pantallas grandes */
 .fuente {
     font-family: Poppins;
     text-align: center;
@@ -29,4 +30,30 @@
     justify-content: center;
     display: flex;
     gap: 2em;
+}
+
+/* Estilos para pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+
+    /* Cambios en la disposición de las tarjetas */
+    .tarjetas {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Ajuste del margen superior de las tarjetas */
+    .tarjetas {
+        margin-top: 50px;
+    }
+
+    /* Ajuste del espacio entre los botones */
+    .botonesr {
+        gap: 1em;
+    }
+
+    /* Cambios en el tamaño de la fuente */
+    .fuente {
+        font-size: 1em;
+    }
+
 }

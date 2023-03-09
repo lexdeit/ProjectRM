@@ -1,3 +1,4 @@
+/* Estilos base para pantallas grandes */
 .background {
     position: absolute;
     width: 100vw;
@@ -12,10 +13,30 @@ iframe {
     height: 100%;
     transform: scale(1.3);
     z-index: -1;
-  }
+}
 
 .centrado {
     display: flex;
     justify-content: center;
     gap: 3em;
+}
+
+/* Estilos para pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+
+    /* Cambios en el tamaño del fondo */
+    .background {
+        background-size: cover;
+    }
+
+    /* Ajuste del tamaño del iframe */
+    iframe {
+        transform: scale(3);
+    }
+
+    /* Ajuste del espacio entre elementos centrados */
+    .centrado {
+        gap: 1em;
+    }
+
 }

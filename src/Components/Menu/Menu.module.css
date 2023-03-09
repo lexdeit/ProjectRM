@@ -1,58 +1,81 @@
+/* Estilos base para pantallas grandes */
 .containermenu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-
-.menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 80px;
-    background: #00000024;
-    backdrop-filter: blur(8px);
-    z-index: 999;
-    box-shadow: 0 0 0px 1px rgba(255, 255, 255, 0.161);
-
-  }
-
-.texto {
-    transition: 400ms;
-    margin-top: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
-    font-family: Poppins;
-    font-size: 20px;
-    color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.textomenu{
-    transition: 400ms;
-    color: white;
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: #00000024;
+  backdrop-filter: blur(8px);
+  z-index: 999;
+  box-shadow: 0 0 0px 1px rgba(255, 255, 255, 0.161);
+}
+
+.texto {
+  transition: 400ms;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  font-family: Poppins;
+  font-size: 20px;
+  color: white;
+}
+
+.textomenu {
+  transition: 400ms;
+  color: white;
 }
 
 .textomenu:hover {
-    transition: 400ms;
-    color: rgb(43, 255, 0);
+  transition: 400ms;
+  color: rgb(43, 255, 0);
 }
 
 .logo {
-    width: 150px;
-    height: fit-content;
-    margin: 0%;
-    animation: scale 1s ease-in-out infinite alternate;
-  }
-  
-  @keyframes scale {
-    from {
+  width: 150px;
+  height: fit-content;
+  margin: 0%;
+  animation: scale 1s ease-in-out infinite alternate;
+}
+
+@keyframes scale {
+  from {
       transform: scale(1);
-    }
-    to {
-      transform: scale(1.1);
-    }
   }
-  
+  to {
+      transform: scale(1.1);
+  }
+}
+
+/* Estilos para pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+
+  /* Cambios en la disposición del menú */
+  .containermenu {
+      flex-direction: column;
+  }
+
+  /* Ajuste del tamaño de la fuente */
+  .texto {
+      font-size: 16px;
+  }
+
+  /* Ajuste del espacio entre elementos del menú */
+  .texto {
+      gap: 10px;
+  }
+
+  /* Ajuste del tamaño del logo */
+  .logo {
+      width: 100px;
+  }
+
+}
