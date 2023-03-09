@@ -26,10 +26,11 @@ iframe {
 
 
     .background {
-        background-size: fixed;
-        position: center;
+        background-size: cover; /* this will ensure the image covers the entire background */
+        background-position: center; /* this will center the image */
         background-image: url('wallpaper.jpg');
-        background-color: rgba(0, 0, 0, 0.50);
+        background-color: rgba(0, 0, 0, 0.5);
+        background-blend-mode: multiply; 
     }
 
 
