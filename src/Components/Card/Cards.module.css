@@ -16,12 +16,12 @@
 }
 
 .tarjetas {
-    margin-top: 100px;
+    margin-top: 8em;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 3em;
     margin-bottom: 2em;
-    padding-top: 2em;
 }
 
 .botonesr {
