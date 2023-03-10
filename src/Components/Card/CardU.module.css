@@ -11,7 +11,7 @@
   height: 425px;
   align-items: center;
   border-radius: 15px;
-  animation: glow 1s ease-in-out infinite alternate, floating 2s ease-in-out infinite;
+  animation: glow 1.5s linear infinite alternate, floating 2s linear infinite;
 }
 
 @keyframes glow {
@@ -19,10 +19,10 @@
     box-shadow: 0 0 10px 1px #00ff75;
   }
   50% {
-    box-shadow: 0 0 20px 7px #00ff75;
+    box-shadow: 0 0 25px 7px #00ff75;
   }
   100% {
-    box-shadow: 0 0 25px 5px #00ff75;
+    box-shadow: 0 0 10px 1px #00ff75;
   }
 }
 
