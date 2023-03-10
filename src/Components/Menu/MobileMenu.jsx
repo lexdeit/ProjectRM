@@ -2,6 +2,7 @@ import React from "react";
 import styles from '../Menu/MobileMenu.module.css';
 import { addCard, eliminarCard, aboutMe, home } from '../../Redux/Actions';
 import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 export default function Mobilemenu() {
     const dispatch = useDispatch();
@@ -12,20 +13,28 @@ export default function Mobilemenu() {
         <>
             <nav className={styles.menu}>
                 <ul className={styles.mobilem}>
-                    <span className={styles.home} onClick={() => dispatch(home())}></span>
+
+                    <Link to={"/"}>
+                        <span className={styles.home}></span>
+                    </Link>
 
                     <span className={styles.random} onClick={() => {
                         dispatch(
                             addCard(characters[Math.floor(Math.random() * characters.length)]))
                     }}></span>
 
-                    <span className={styles.favorite}></span>
+                    <Link to={"favorite"}>
+                        <span className={styles.favorite}></span>
+                    </Link>
+
                     <span className={styles.basura} onClick={() => {
                         dispatch(eliminarCard())
                     }}></span>
-                    <span className={styles.about} onClick={
-                        () => dispatch(aboutMe())
-                    }></span>
+
+                    <Link to={"about"}>
+                        <span className={styles.about}></span>
+                    </Link>
+
                 </ul>
             </nav>
         </>

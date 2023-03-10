@@ -17,6 +17,7 @@ function App() {
           <Route path='/about' element={<About />} />
           <Route path='/favorites' element={<CardFavorites/>} />
         </Routes>
+        <Mobilemenu/>
       </BrowserRouter>
     </Provider>
 
