@@ -40,7 +40,7 @@ function reducer(state = initialState, action) {
             return {
                 ...state,
                 aboutMea: [],
-                showCards: state.characters.filter((character) =>
+                showCards: state.characters.find((character) =>
                 character.id === `${action.payload}`)
             }
 

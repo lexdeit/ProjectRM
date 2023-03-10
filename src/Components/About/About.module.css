@@ -1,3 +1,18 @@
+.content {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../../../public/rick-and-morty-season-4-qk-2880x1800\ \(1\).jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  z-index: -1;
+}
+
+
 .card {
   justify-content: center;
   align-items: center;
@@ -6,8 +21,8 @@
   background: #00000024;
   border-radius: 5%;
   backdrop-filter: blur(8px);
-  margin-top: 10%;
   box-shadow: 0 0 0px 1px rgba(255, 255, 255, 0.302);
+  z-index: 1;
 }
 
 

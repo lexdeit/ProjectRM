@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./Buttons.module.css"
+import styles from "./Buttons.module.css";
 
-export default function Buttons({funcion, infoboton}) {
+export default function Buttons({funcion, infoboton, ruta}) {
 
 
     return (

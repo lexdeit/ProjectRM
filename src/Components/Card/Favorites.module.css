@@ -1,0 +1,17 @@
+.tarjetas{
+    margin-top: 8em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3em;
+    margin-bottom: 2em;
+}
+
+.background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -5;
+    margin-top: -8em;
+    background-color: rgba(0, 0, 0, 0.50);
+}

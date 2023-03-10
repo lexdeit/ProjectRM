@@ -1,9 +1,11 @@
 import React from 'react';
-import Buttons from '../Buttons/Buttons';
-import styles from '../Menu/Menu.module.css';
-import SearchBar from '../SearchBar/Search';
-import { addCard, eliminarCard, aboutMe, home } from '../../Redux/Actions';
 import { useSelector, useDispatch } from "react-redux";
+import { Link } from 'react-router-dom';
+import { addCard, eliminarCard, aboutMe, home } from '../../Redux/Actions';
+import styles from '../Menu/Menu.module.css';
+import Buttons from '../Buttons/Buttons';
+import SearchBar from '../SearchBar/Search';
+
 
 function MenuHome() {
     const dispatch = useDispatch();
@@ -19,10 +21,11 @@ function MenuHome() {
                             src="logo.png"
                             className={styles.logo} />
 
-                        <Buttons
-                            infoboton={"HOME"}
-                            funcion={() => dispatch(home())}
-                        />
+                        <Link to={"/"}>
+                            <Buttons
+                                infoboton={"HOME"}
+                            />
+                        </Link>
 
                         <Buttons
                             infoboton={"RANDOM CARD"}
@@ -34,23 +37,24 @@ function MenuHome() {
                         />
 
                         <Buttons
-                            infoboton={"FAVORITES"}
-                        />
-                        
-                        <Buttons
                             infoboton={"DELETE CARDS"}
                             funcion={() => {
                                 dispatch(eliminarCard())
                             }}
                         />
 
+                        <Link to={"/favorites"}>
+                            <Buttons
+                                infoboton={"FAVORITES"}
+                            />
+                        </Link>
 
-                        <Buttons
-                            infoboton={"ABOUT ME"}
-                            funcion={() => dispatch(aboutMe())}
-                        />
-
-                        <SearchBar/>
+                        <Link to={"/about"}>
+                            <Buttons
+                                infoboton={"ABOUT ME"}
+                            />
+                        </Link>
+                        <SearchBar />
                     </ul>
                 </nav>
 
