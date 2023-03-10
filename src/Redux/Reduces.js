@@ -19,8 +19,7 @@ function reducer(state = initialState, action) {
         case ADD_CARD:
             return {
                 ...state,
-                aboutMea: [],
-                showCards: [...state.showCards, action.payload]
+                showCards: [action.payload, ...state.showCards]
             }
 
         case ELIMINAR_CARDS:
@@ -39,7 +38,6 @@ function reducer(state = initialState, action) {
         case BUSCAR_CARD:
             return {
                 ...state,
-                aboutMea: [],
                 showCards: state.characters.find((character) =>
                 character.id === `${action.payload}`)
             }
@@ -48,7 +46,7 @@ function reducer(state = initialState, action) {
         case FAVORITES_CARD:
             return {
                 ...state,
-                favorites: [...state.favorites, action.payload]
+                favorites: [action.payload, ...state.favorites]
             }
 
         case SHOW_ABOUT_ME:

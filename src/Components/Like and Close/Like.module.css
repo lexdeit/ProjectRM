@@ -1,4 +1,4 @@
-.container input {
+.containerlike input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
@@ -6,7 +6,7 @@
     width: 0;
   }
   
-  .container {
+  .containerlike {
     display: block;
     position: flex;
     cursor: pointer;
@@ -24,12 +24,12 @@
     animation: dislike_effect 400ms ease;
   }
   
-  .container input:checked ~ .checkmark path {
+  .containerlike input:checked ~ .checkmark path {
     fill: #FF5353;
     stroke-width: 0;
   }
   
-  .container input:checked ~ .checkmark {
+  .containerlike input:checked ~ .checkmark {
     animation: like_effect 400ms ease;
   }
   

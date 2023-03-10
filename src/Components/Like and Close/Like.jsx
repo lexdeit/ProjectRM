@@ -7,8 +7,8 @@ export default function Like(props) {
     return (
         <>
 
-            <div>
-                <label className={styles.container} onClick={props.like}>
+            <div onClick={() => {console.log("Me diste!");}}>
+                <label className={styles.container} >
                     <input checked={styles.checked} type="checkbox" />
                     <div className={styles.checkmark}>
                         <svg viewBox="0 0 256 256">

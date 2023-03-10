@@ -89,15 +89,15 @@ export const buscarId = ({ id, name, gender, origin, species, image }) => (dispa
 
 }
 
-export const addFavorites = ({id, name, gender, origin, species, image}) => {
-    let newFavorite = <CardU
+export const addFavorites = ({ id, name, gender, origin, species, image }) => {
+    let newFavorite = (<CardU
         key={id}
         name={name}
         gender={gender}
         origin={origin.name}
         species={species}
         image={image}
-    />;
+    />);
     return {
         type: FAVORITES_CARD,
         payload: newFavorite
