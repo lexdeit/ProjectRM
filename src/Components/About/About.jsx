@@ -33,10 +33,14 @@ const About = () => {
                         <span className={styles.twitter} onClick={() => window.open('https://twitter.com/lex_teck')}></span>
                         {/* <span className={styles.linkedin} onClick={() => window.open('https://www.linkedin.com/in/lexdeit/')}></span> */}
                     </div>
-
+                    {/* <div className={styles.corazon}>
+                        <span className={styles.henry}></span>
+                    </div> */}
                     <div className={styles.corazon}>
-                        <h4 className={styles.made}>Made with love</h4>
+                        <h4 className={styles.made}>Made with </h4>
                         <span className={styles.love}></span>
+                        <h4 className={styles.made}>in Mexico</h4>
+                        <span className={styles.mexico}></span>
                     </div>
                 </div>
             </div>
