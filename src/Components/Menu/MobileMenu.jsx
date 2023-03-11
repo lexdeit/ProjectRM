@@ -22,7 +22,7 @@ const Mobilemenu = () => {
                             addCard(characters[Math.floor(Math.random() * characters.length)]))
                     }}></span>
 
-                    <Link to={"favorite"}>
+                    <Link to={"favorites"}>
                         <span className={styles.favorite}></span>
                     </Link>
 
