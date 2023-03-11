@@ -1,6 +1,6 @@
 import CardU from "../Components/Card/CardU";
 import axios from "axios";
-import { ADD_CARD, GET_API, ELIMINAR_CARDS, ELIMINAR, FAVORITES_CARD } from "./Types";
+import { ADD_CARD, GET_API, ELIMINAR_CARDS, ELIMINAR, FAVORITES_CARD, DELETE_FAVORITES } from "./Types";
 
 
 export const getApi = (url) => {
@@ -87,7 +87,7 @@ export const buscarId = ({ id, name, gender, origin, species, image }) => (dispa
 
 }
 
-export const addFavorites = ({ id, name, gender, origin, species, image }) => {
+export const addFavorites = ({ id, name, gender, origin, species, image}) => (dispatch) => {
     let newFavorite = (<CardU
         key={id}
         name={name}
@@ -95,9 +95,17 @@ export const addFavorites = ({ id, name, gender, origin, species, image }) => {
         origin={origin.name}
         species={species}
         image={image}
+        funcion={() => dispatch(eliminarFavorites(id))}
     />);
-    return {
+    dispatch({
         type: FAVORITES_CARD,
         payload: newFavorite
+    })
+}
+
+export const eliminarFavorites = (id) => {
+    return {
+        type: DELETE_FAVORITES,
+        payload: id
     }
 }

@@ -53,6 +53,7 @@ function reducer(state = initialState, action) {
                 ...state,
                 showCards: [],
             } 
+
         case DELETE_FAVORITES:
             return {
                 ...state,

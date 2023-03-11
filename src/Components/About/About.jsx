@@ -29,7 +29,7 @@ const About = () => {
                     <div className={styles.share}>
                         <span className={styles.instagram} onClick={() => window.open('https://www.instagram.com/lexteckg/')} ></span>
                         <span className={styles.github} onClick={() => window.open('https://github.com/lexdeit')}></span>
-                        <span className={styles.twitter} onClick={() => window.open('https://github.com/lexdeit')}></span>
+                        <span className={styles.twitter} onClick={() => window.open('https://twitter.com/lex_teck')}></span>
                         {/* <span className={styles.linkedin} onClick={() => window.open('https://www.linkedin.com/in/lexdeit/')}></span> */}
                     </div>
 
