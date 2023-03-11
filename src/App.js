@@ -6,6 +6,7 @@ import About from './Components/About/About';
 import MenuHome from './Components/Menu/Menu';
 import Mobilemenu from './Components/Menu/MobileMenu'
 import CardFavorites from './Components/Card/Favorites';
+import CardDetails from './Components/Details/CardDetails';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path='/' element={<Homepage />} />
           <Route path='/about' element={<About />} />
           <Route path='/favorites' element={<CardFavorites/>} />
+          <Route path='/detail/:id' element={ <CardDetails/> }/>
         </Routes>
         <Mobilemenu/>
       </BrowserRouter>

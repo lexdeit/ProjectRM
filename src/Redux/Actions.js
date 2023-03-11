@@ -28,6 +28,7 @@ export const addCard = ({ id, name, gender, origin, species, image }) => (dispat
             origin={origin.name}
             species={species}
             image={image}
+            id={id}
             funcion={() => dispatch(eliminar(id))}
             like={() => dispatch(addFavorites({
                 id: id,

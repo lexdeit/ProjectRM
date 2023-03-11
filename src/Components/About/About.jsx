@@ -4,6 +4,7 @@ const About = () => {
 
     return (
         <>
+            <iframe src="https://www.youtube.com/embed/5_Blq9W9cT8?&autoplay=1&loop=1&mute=1&showinfo=0&controls=0"></iframe>
             <div className={styles.content}>
                 <div className={styles.card}>
 

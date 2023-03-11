@@ -1,7 +1,8 @@
 import styles from "../Card/CardU.module.css";
+import { Link } from "react-router-dom";
 
 
-const CardU = ({ name, image, species, gender, origin, funcion, like }) => {
+const CardU = ({ id, name, image, species, gender, origin, funcion, like }) => {
 
 
   return (
@@ -33,20 +34,21 @@ const CardU = ({ name, image, species, gender, origin, funcion, like }) => {
             </div>
           }
 
+          <Link to={`/detail/${id}`}>
 
-          <h2 className={styles.informacion}>{name}</h2>
+            <h2 className={styles.informacion}>{name}</h2>
 
-          <img className={styles.imagen} src={image} alt={name} />
+            <img className={styles.imagen} src={image} alt={name} />
 
-          <h3 className={styles.texto}>Species: {species}</h3>
+            <h3 className={styles.texto}>Species: {species}</h3>
 
-          <h3 className={styles.texto}>Gender: {gender}</h3>
+            <h3 className={styles.texto}>Gender: {gender}</h3>
 
-          <h3 className={styles.texto}>Origin: {origin}</h3>
+            <h3 className={styles.texto}>Origin: {origin}</h3>
 
+          </Link>
         </div>
       </div>
-
     </>
   );
 }
