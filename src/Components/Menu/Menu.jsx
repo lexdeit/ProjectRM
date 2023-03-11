@@ -16,9 +16,14 @@ const MenuHome = () => {
             <div className={styles.containermenu}>
                 <nav className={styles.menu}>
                     <ul className={styles.texto}>
-                        <img
-                            src="logo.png"
-                            className={styles.logo} />
+
+                        <Link to={"/"}>
+
+                            <img
+                                src="logo.png"
+                                className={styles.logo} />
+                        </Link>
+
 
                         <Link to={"/"}>
                             <Buttons
@@ -26,23 +31,25 @@ const MenuHome = () => {
                             />
                         </Link>
 
+                        <Link to={"/"}>
+                            <Buttons
+                                infoboton={"RANDOM CARD"}
+                                funcion={() => {
+                                    dispatch(addCard(
+                                        characters[Math.floor(Math.random() * characters.length)]
+                                    ))
+                                }}
+                            />
+                        </Link>
 
-                        <Buttons
-                            infoboton={"RANDOM CARD"}
-                            funcion={() => {
-                                dispatch(addCard(
-                                    characters[Math.floor(Math.random() * characters.length)]
-                                ))
-                            }}
-                        />
-
-                        <Buttons
-                            infoboton={"DELETE CARDS"}
-                            funcion={() => {
-                                dispatch(eliminarCard())
-                            }}
-                        />
-
+                        <Link to={"/"}>
+                            <Buttons
+                                infoboton={"DELETE CARDS"}
+                                funcion={() => {
+                                    dispatch(eliminarCard())
+                                }}
+                            />
+                        </Link>
                         <Link to={"/favorites"}>
                             <Buttons
                                 infoboton={"FAVORITES"}
