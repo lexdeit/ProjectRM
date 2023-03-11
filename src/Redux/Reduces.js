@@ -1,10 +1,8 @@
-import { DELETE_ALL, SHOW_ABOUT_ME, ADD_CARD, GET_API, ELIMINAR_CARDS, ELIMINAR, BUSCAR_CARD, FAVORITES_CARD } from './Types';
+import { DELETE_ALL, ADD_CARD, GET_API, ELIMINAR_CARDS, ELIMINAR, BUSCAR_CARD, FAVORITES_CARD, DELETE_FAVORITES } from './Types';
 const initialState = {
     characters: [],
-    cards: [],
     showCards: [],
     favorites: [],
-    aboutMea: []
 }
 
 function reducer(state = initialState, action) {
@@ -49,19 +47,18 @@ function reducer(state = initialState, action) {
                 favorites: [action.payload, ...state.favorites]
             }
 
-        case SHOW_ABOUT_ME:
-            return {
-                ...state,
-                showCards: [],
-                aboutMea: [action.payload]
-            }
 
         case DELETE_ALL:
             return {
                 ...state,
                 showCards: [],
-                aboutMea: []
             } 
+        case DELETE_FAVORITES:
+            return {
+                ...state,
+                favorites: state.favorites.filter((card) =>
+                card.key !== `${action.payload}`)
+            }
 
 
         default: return state;

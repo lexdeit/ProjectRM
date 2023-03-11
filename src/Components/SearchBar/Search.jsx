@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "../../Components/SearchBar/Search.module.css";
 import { buscarId } from "../../Redux/Actions";
 
-export default function SearchBar() {
+const SearchBar = () => {
     const characters = useSelector((state) => state.characters)
     const [ida, setida] = useState('')
     const dispatch = useDispatch();
@@ -44,3 +44,5 @@ export default function SearchBar() {
     )
 
 }
+
+export default SearchBar;

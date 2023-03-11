@@ -1,10 +1,10 @@
-import { React, useEffect } from "react";
-import styles from "../Homepage/Home.module.css";
-import Card from "../Card/Cards";
+import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getApi } from "../../Redux/Actions";
+import styles from "../Homepage/Home.module.css";
+import Card from "../Card/Cards";
 
-function Homepage() {
+const Homepage = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {

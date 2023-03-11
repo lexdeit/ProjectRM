@@ -1,10 +1,9 @@
-import React from "react";
 import styles from '../Menu/MobileMenu.module.css';
 import { addCard, eliminarCard, aboutMe, home } from '../../Redux/Actions';
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
-export default function Mobilemenu() {
+const Mobilemenu = () => {
     const dispatch = useDispatch();
     const characters = useSelector((state) => state.characters);
 
@@ -41,3 +40,5 @@ export default function Mobilemenu() {
     )
 
 }
+
+export default Mobilemenu;

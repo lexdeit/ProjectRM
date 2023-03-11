@@ -1,7 +1,6 @@
-import React from "react";
 import styles from "../Loading/Loading.module.css"
 
-export default function Loading() {
+const Loading = () =>  {
 
 
 
@@ -25,3 +24,5 @@ export default function Loading() {
         </>
     )
 }
+
+export default Loading;

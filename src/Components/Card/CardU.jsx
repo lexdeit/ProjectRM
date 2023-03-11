@@ -1,8 +1,7 @@
-import React from "react";
 import styles from "../Card/CardU.module.css";
 
 
-export default function CardU({ name, image, species, gender, origin, funcion, like }) {
+const CardU = ({ name, image, species, gender, origin, funcion, like }) => {
 
 
   return (
@@ -40,3 +39,6 @@ export default function CardU({ name, image, species, gender, origin, funcion, l
     </>
   );
 }
+
+
+export default CardU;

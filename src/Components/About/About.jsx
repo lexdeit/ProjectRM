@@ -1,7 +1,6 @@
-import React from "react";
 import styles from "../About/About.module.css"
 
-function About() {
+const About = () => {
 
     return (
         <>
@@ -29,8 +28,9 @@ function About() {
 
                     <div className={styles.share}>
                         <span className={styles.instagram} onClick={() => window.open('https://www.instagram.com/lexteckg/')} ></span>
-                        {/* <span className={styles.linkedin} onClick={() => window.open('https://www.linkedin.com/in/lexdeit/')}></span> */}
                         <span className={styles.github} onClick={() => window.open('https://github.com/lexdeit')}></span>
+                        <span className={styles.twitter} onClick={() => window.open('https://github.com/lexdeit')}></span>
+                        {/* <span className={styles.linkedin} onClick={() => window.open('https://www.linkedin.com/in/lexdeit/')}></span> */}
                     </div>
 
                     <div className={styles.corazon}>

@@ -1,4 +1,3 @@
-import React from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from 'react-router-dom';
 import { addCard, eliminarCard, aboutMe, home } from '../../Redux/Actions';
@@ -7,7 +6,7 @@ import Buttons from '../Buttons/Buttons';
 import SearchBar from '../SearchBar/Search';
 
 
-function MenuHome() {
+const MenuHome = () => {
     const dispatch = useDispatch();
     const characters = useSelector((state) => state.characters);
 
@@ -26,6 +25,7 @@ function MenuHome() {
                                 infoboton={"HOME"}
                             />
                         </Link>
+
 
                         <Buttons
                             infoboton={"RANDOM CARD"}

@@ -1,7 +1,6 @@
-import React from "react";
 import styles from "./Buttons.module.css";
 
-export default function Buttons({funcion, infoboton, ruta}) {
+const Buttons = ({funcion, infoboton}) => {
 
 
     return (
@@ -17,3 +16,5 @@ export default function Buttons({funcion, infoboton, ruta}) {
     )
 
 }
+
+export default Buttons;

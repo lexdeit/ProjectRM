@@ -1,8 +1,7 @@
-import React from "react";
 import styles from "../Card/Cards.module.css";
 import { useSelector } from "react-redux";
 
-function Card() {
+const Card = () => {
     const showCards = useSelector((state) => state.showCards)
 
 

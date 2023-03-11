@@ -1,8 +1,6 @@
-import React from "react";
 import CardU from "../Components/Card/CardU";
 import axios from "axios";
-import { DELETE_ALL, SHOW_ABOUT_ME, ADD_CARD, GET_API, ELIMINAR_CARDS, ELIMINAR, FAVORITES_CARD } from "./Types";
-import About from "../Components/About/About";
+import { ADD_CARD, GET_API, ELIMINAR_CARDS, ELIMINAR, FAVORITES_CARD } from "./Types";
 
 
 export const getApi = (url) => {
@@ -101,18 +99,5 @@ export const addFavorites = ({ id, name, gender, origin, species, image }) => {
     return {
         type: FAVORITES_CARD,
         payload: newFavorite
-    }
-}
-
-export const aboutMe = () => {
-    return {
-        type: SHOW_ABOUT_ME,
-        payload: <About />
-    }
-}
-
-export const home = () => {
-    return {
-        type: DELETE_ALL
     }
 }
