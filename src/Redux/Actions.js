@@ -65,6 +65,7 @@ export const buscarId = ({ id, name, gender, origin, species, image }) => (dispa
     let card =
         <CardU
             key={id}
+            id={id}
             name={name}
             gender={gender}
             origin={origin.name}
@@ -90,6 +91,7 @@ export const buscarId = ({ id, name, gender, origin, species, image }) => (dispa
 
 export const addFavorites = ({ id, name, gender, origin, species, image}) => (dispatch) => {
     let newFavorite = (<CardU
+        id={id}
         key={id}
         name={name}
         gender={gender}
