@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { getApi } from "../../Redux/Actions";
 import { useSelector } from 'react-redux';
 import Buttons from '../../Components/Buttons/Buttons';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 const Landing = () => {
@@ -15,6 +15,7 @@ const Landing = () => {
     const [sucess, setSucess] = useState("");
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    
     useEffect(() => {
         dispatch(getApi('https://rickandmortyapi.com/api/character'));
     }, []);
