@@ -1,10 +1,10 @@
 import styles from './Landing.module.css';
-import Loading from '../Components/Loading/Loading';
+import Loading from '../../Components/Loading/Loading';
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { getApi } from "../Redux/Actions";
+import { getApi } from "../../Redux/Actions";
 import { useSelector } from 'react-redux';
-import Buttons from '../Components/Buttons/Buttons';
+import Buttons from '../../Components/Buttons/Buttons';
 import { Link, useNavigate } from 'react-router-dom';
 
 

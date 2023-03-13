@@ -1,27 +1,25 @@
 import { Provider } from 'react-redux';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import store from './Redux/Store';
-import Homepage from './Components/Homepage/Home';
-import About from './Components/About/About';
-import MenuHome from './Components/Menu/Menu';
-import Mobilemenu from './Components/Menu/MobileMenu'
-import CardFavorites from './Components/Card/Favorites';
-import CardDetails from './Components/Details/CardDetails';
-import Landing from './View/Landing';
+import Landing from './View/Landing/Landing';
+import Homeview from './View/Home/Homeview';
+import Aboutview from './View/About/Aboutview';
+import Cardfavoritesview from './View/Cardfavorites/Cardfavorites';
+import Carddetailsview from './View/CardDetails/Carddetailsview';
+
 
 function App() {
+
   return (
     <Provider store={store}>
       <BrowserRouter>
-      <MenuHome />
         <Routes>
-          <Route path='/' element={<Landing />} />
-          <Route path='/home' element={<Homepage />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/favorites' element={<CardFavorites/>} />
-          <Route path='/detail/:id' element={ <CardDetails/> }/>
+          <Route path='/' element={ <Landing /> } />
+          <Route path='/home' element={ <Homeview /> } />
+          <Route path='/about' element={ <Aboutview/> } />
+          <Route path='/favorites' element={ <Cardfavoritesview/> } />
+          <Route path='/detail/:id' element={ <Carddetailsview/> }/>
         </Routes>
-        <Mobilemenu/>
       </BrowserRouter>
     </Provider>
 
