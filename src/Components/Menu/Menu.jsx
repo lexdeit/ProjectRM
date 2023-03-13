@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { addCard, eliminarCard } from '../../Redux/Actions';
 import styles from '../Menu/Menu.module.css';
 import Buttons from '../Buttons/Buttons';
-import SearchBar from '../SearchBar/Search';
+import SearchBar from '../SearchBar/Search';  
 
 
 const MenuHome = () => {
@@ -20,8 +20,10 @@ const MenuHome = () => {
                         <Link to={"/home"}>
 
                             <img
-                                src="logo.png"
-                                className={styles.logo} />
+                                src="logo.webp"
+                                className={styles.logo}
+                            />
+
                         </Link>
 
 
@@ -50,6 +52,7 @@ const MenuHome = () => {
                                 }}
                             />
                         </Link>
+
                         <Link to={"/favorites"}>
                             <Buttons
                                 infoboton={"FAVORITES"}
@@ -61,8 +64,11 @@ const MenuHome = () => {
                                 infoboton={"ABOUT ME"}
                             />
                         </Link>
+
                         <SearchBar />
+
                     </ul>
+                    
                 </nav>
 
             </div>

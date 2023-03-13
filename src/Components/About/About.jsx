@@ -9,7 +9,7 @@ const About = () => {
                 <div className={styles.card}>
 
                     <img className={styles.img}
-                        src="Compressed.jpg" />
+                        src="Compressed.webp" />
 
                     <div className={styles.codeloader}>
                         <span>{`{`}</span>

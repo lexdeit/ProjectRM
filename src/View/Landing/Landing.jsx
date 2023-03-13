@@ -41,7 +41,7 @@ const Landing = () => {
                 {characters.length !== 0 ?
                     <>
                         <div className={styles.loginbox}>
-                            <img src='logo.png' className={styles.logo} />
+                            <img src='logo.webp' className={styles.logo} />
                             <br />
                             <br />
                             <form onSubmit={iniciarSesion}>

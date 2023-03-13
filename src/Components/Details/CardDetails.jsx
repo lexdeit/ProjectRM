@@ -1,6 +1,5 @@
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 import styles from './CardDetails.module.css';
 
 const CardDetails = () => {

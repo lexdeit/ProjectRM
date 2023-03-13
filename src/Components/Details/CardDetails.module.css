@@ -11,6 +11,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 iframe {
@@ -34,7 +35,7 @@ iframe {
   padding: 20px;
   gap: 5em;
   transition: 500ms;
-
+  position: relative;
 }
 
 .container:hover{
@@ -47,8 +48,9 @@ iframe {
   font-family: Poppins;
   font-weight: 400;
   color: rgb(255, 255, 255);
-  font-size: 50px;
+  font-size: 45px;
   margin: 0% 0% 5%;
+  position: relative;
 } 
 
 .texto {
@@ -58,6 +60,7 @@ iframe {
   color: white;
   font-size: 17px;
   font-weight: 300;
+  position: relative;
 }
 
 .imagen {
@@ -65,5 +68,6 @@ iframe {
   height: cover;
   margin: 0%;
   border-radius: 5%;
+  position: relative;
 }
 
