@@ -1,15 +1,8 @@
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { getApi } from "../../Redux/Actions";
 import styles from "../Homepage/Home.module.css";
 import Card from "../Card/Cards";
 
 const Homepage = () => {
-    const dispatch = useDispatch();
 
-    useEffect(() => {
-        dispatch(getApi('https://rickandmortyapi.com/api/character'));
-    }, []);
 
     return (
         <>

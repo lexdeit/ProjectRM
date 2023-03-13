@@ -7,6 +7,7 @@ import MenuHome from './Components/Menu/Menu';
 import Mobilemenu from './Components/Menu/MobileMenu'
 import CardFavorites from './Components/Card/Favorites';
 import CardDetails from './Components/Details/CardDetails';
+import Landing from './View/Landing';
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
       <BrowserRouter>
       <MenuHome />
         <Routes>
-          <Route path='/' element={<Homepage />} />
+          <Route path='/' element={<Landing />} />
+          <Route path='/home' element={<Homepage />} />
           <Route path='/about' element={<About />} />
           <Route path='/favorites' element={<CardFavorites/>} />
           <Route path='/detail/:id' element={ <CardDetails/> }/>

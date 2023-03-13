@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from 'react-router-dom';
-import { addCard, eliminarCard, aboutMe, home } from '../../Redux/Actions';
+import { addCard, eliminarCard } from '../../Redux/Actions';
 import styles from '../Menu/Menu.module.css';
 import Buttons from '../Buttons/Buttons';
 import SearchBar from '../SearchBar/Search';
@@ -17,7 +17,7 @@ const MenuHome = () => {
                 <nav className={styles.menu}>
                     <ul className={styles.texto}>
 
-                        <Link to={"/"}>
+                        <Link to={"/home"}>
 
                             <img
                                 src="logo.png"
@@ -25,13 +25,13 @@ const MenuHome = () => {
                         </Link>
 
 
-                        <Link to={"/"}>
+                        <Link to={"/home"}>
                             <Buttons
                                 infoboton={"HOME"}
                             />
                         </Link>
 
-                        <Link to={"/"}>
+                        <Link to={"/home"}>
                             <Buttons
                                 infoboton={"RANDOM CARD"}
                                 funcion={() => {
@@ -42,7 +42,7 @@ const MenuHome = () => {
                             />
                         </Link>
 
-                        <Link to={"/"}>
+                        <Link to={"/home"}>
                             <Buttons
                                 infoboton={"DELETE CARDS"}
                                 funcion={() => {

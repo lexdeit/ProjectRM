@@ -15,7 +15,8 @@ const SearchBar = () => {
                 characters.find(character => 
                     `${character.id}` === ida 
                     ? character 
-                    : console.log("Buscando..."))
+                    : console.log("Buscando...") )
+                    
             )
         )
     }
