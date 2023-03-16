@@ -1,36 +1,47 @@
+import { useEffect, useState } from "react";
+import { useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from "react-redux";
+import { getApi } from "../../Redux/Actions";
+import validation from './validation';
 import styles from './Landing.module.css';
 import Loading from '../../Components/Loading/Loading';
-import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { getApi } from "../../Redux/Actions";
-import { useSelector } from 'react-redux';
 import Buttons from '../../Components/Buttons/Buttons';
-import { useNavigate } from 'react-router-dom';
 
 
 const Landing = () => {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [error, setError] = useState("");
-    const [sucess, setSucess] = useState("");
+
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    
+
     useEffect(() => {
         dispatch(getApi('https://rickandmortyapi.com/api/character'));
     }, []);
 
     const characters = useSelector((state) => state.characters)
 
-    const iniciarSesion = (e) => {
-        e.preventDefault();
+    const [form, setForm] = useState({
+        email: "",
+        password: "",
+    });
 
-        email || password ? setSucess("Sucessfully login in!")
-            : setError("Please enter your email and password")
-        return;
+    const [errors, setErrors] = useState({
+        email: "",
+        password: "",
+    });
 
 
+    const handleChange = (event) => {
+        const property = event.target.name
+        const value = event.target.value
+
+        setForm({ ...form, [property]: value });
+        validation({ ...form, [property]: value }, setErrors, errors);
     }
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+    }
+
 
 
     return (
@@ -44,23 +55,25 @@ const Landing = () => {
                             <img src='logo.webp' className={styles.logo} />
                             <br />
                             <br />
-                            <form onSubmit={iniciarSesion}>
+                            <form onSubmit={handleSubmit}>
                                 <div className={styles.userbox}>
-                                    <label htmlFor='email'>Email</label>
+                                    <label htmlFor='email'>{errors.email ? errors.email : "Email"}</label>
                                     <input
+                                        name='email'
                                         type="email"
                                         id='email'
-                                        value={email}
-                                        onChange={(e) => setEmail(e.target.value)}
+                                        value={form.email}
+                                        onChange={handleChange}
                                     />
                                 </div>
                                 <div className={styles.userbox}>
-                                    <label htmlFor="password">Password</label>
+                                    <label htmlFor="password">{errors.password ? errors.password : "Password"}</label>
                                     <input
+                                        name='password'
                                         type="password"
                                         id='password'
-                                        value={password}
-                                        onChange={(e) => setPassword(e.target.value)}
+                                        value={form.password}
+                                        onChange={handleChange}
                                     />
                                 </div>
 
@@ -70,8 +83,6 @@ const Landing = () => {
                                 />
 
                             </form>
-                            {error && <p className={styles.error}>Please enter your email and password</p>}
-                            {sucess && navigate('/home')}
 
                         </div>
                     </>

@@ -29,15 +29,13 @@ function reducer(state = initialState, action) {
         case ELIMINAR:
             return {
                 ...state,
-                showCards: state.showCards.filter((card) =>
-                    card.key !== `${action.payload}`)
+                showCards: state.showCards.filter(card => card.key !== `${action.payload}`)
             }
 
         case BUSCAR_CARD:
             return {
                 ...state,
-                showCards: state.characters.find((character) =>
-                character.id === `${action.payload}`)
+                showCards: state.characters.find(character => character.id === `${action.payload}`)
             }
 
 
@@ -52,13 +50,12 @@ function reducer(state = initialState, action) {
             return {
                 ...state,
                 showCards: [],
-            } 
+            }
 
         case DELETE_FAVORITES:
             return {
                 ...state,
-                favorites: state.favorites.filter((card) =>
-                card.key !== `${action.payload}`)
+                favorites: state.favorites.filter(card => card.key !== `${action.payload}`)
             }
 
 

@@ -1,5 +1,5 @@
 import styles from '../Menu/MobileMenu.module.css';
-import { addCard, eliminarCard, aboutMe, home } from '../../Redux/Actions';
+import { addCard, eliminarCard } from '../../Redux/Actions';
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
