@@ -10,10 +10,12 @@ const Mobilemenu = () => {
 
     return (
         <>
-            <nav className={styles.menu}>
-                <ul className={styles.mobilem}>
+            <div className={styles.contenedor}>
 
-                    <Link to={"/"}>
+                <nav className={styles.menu}>
+                    {/* <ul className={styles.mobilem}> */}
+
+                    <Link to={"/home"}>
                         <span className={styles.home}></span>
                     </Link>
 
@@ -22,7 +24,7 @@ const Mobilemenu = () => {
                             addCard(characters[Math.floor(Math.random() * characters.length)]))
                     }}></span>
 
-                    <Link to={"favorites"}>
+                    <Link to={"/favorites"}>
                         <span className={styles.favorite}></span>
                     </Link>
 
@@ -30,12 +32,13 @@ const Mobilemenu = () => {
                         dispatch(eliminarCard())
                     }}></span>
 
-                    <Link to={"about"}>
+                    <Link to={"/about"}>
                         <span className={styles.about}></span>
                     </Link>
 
-                </ul>
-            </nav>
+                    {/* </ul> */}
+                </nav>
+            </div>
         </>
     )
 
