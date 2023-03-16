@@ -1,21 +1,12 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from 'react-router-dom';
-import { useSelector, useDispatch } from "react-redux";
-import { getApi } from "../../Redux/Actions";
+import { useState } from "react";
+import { useSelector } from "react-redux";
 import validation from './validation';
 import styles from './Landing.module.css';
 import Loading from '../../Components/Loading/Loading';
 import Buttons from '../../Components/Buttons/Buttons';
 
 
-const Landing = () => {
-
-    const navigate = useNavigate();
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(getApi('https://rickandmortyapi.com/api/character'));
-    }, []);
+const Landing = ({ login }) => {
 
     const characters = useSelector((state) => state.characters)
 
@@ -40,6 +31,7 @@ const Landing = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        login(form)
     }
 
 
