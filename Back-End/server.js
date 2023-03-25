@@ -24,7 +24,12 @@ http
                     res.writeHead(404, { "Content-Type": "text/plain" })
                     && res.end("No se encontro un personaje con ese ID")
 
+            break;
 
+            case `/rickandmorty/characters`:
+
+                res.writeHead(200, {"Content-Type": "application/json"})
+                && res.end(JSON.stringify(characters))
 
             break;
 

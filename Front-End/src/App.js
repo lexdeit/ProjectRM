@@ -12,7 +12,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getApi('https://rickandmortyapi.com/api/character'));
+    dispatch(getApi('http://localhost:3001/rickandmorty/characters'));
   }, []);
   const [access, setAccess] = useState(false);
   const navigate = useNavigate();

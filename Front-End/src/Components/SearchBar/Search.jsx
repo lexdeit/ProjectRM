@@ -5,24 +5,21 @@ import { buscarId } from "../../Redux/Actions";
 
 const SearchBar = () => {
     const characters = useSelector((state) => state.characters)
-    const [ida, setida] = useState('')
+    const [id, setID] = useState('')
     const dispatch = useDispatch();
 
 
-    const enviarID = (characters, ida) => {
+    const enviarID = (characters, id) => {
         dispatch(
             buscarId(
-                characters.find(character => 
-                    `${character.id}` === ida 
-                    ? character 
-                    : console.log("Buscando...") )
-                    
+                characters.find(character => `${character.id}` === id ?
+                    character : console.log("Buscando..."))
             )
         )
     }
 
     const capturar = (event) => {
-        setida(event.target.value)
+        setID(event.target.value)
     }
 
 
@@ -40,7 +37,7 @@ const SearchBar = () => {
                 />
 
             </div>
-            <span className={styles.lupa} onClick={() => enviarID(characters ,ida)}></span>
+            <span className={styles.lupa} onClick={() => enviarID(characters, id)}></span>
         </>
     )
 
