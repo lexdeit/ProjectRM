@@ -8,17 +8,41 @@ http
     .createServer((req, res) => {
         res.setHeader('Access-Control-Allow-Origin', '*');
         const { url } = req;
+        const id = url.split("/").at(-1);
 
         switch (url) {
-            case "/rickandmorty/character":
-                res.writeHead(200, { "Content-Type": "application/json" });
-                return res.end(JSON.stringify(characters));
+
+
+            case `/rickandmorty/character/${id}`:
+
+                const character = characters.find(character => character.id == id);
+
+                res.writeHead(200, { "Content-Type": "application/json" })
+                &&
+                res.end(JSON.stringify(character));
+
+            break;
+
+
 
             default:
-                res.writeHead(404);
-                return res.end("La peticion que usted realizo es incorrecta!");
-        }
 
+                res.writeHead(404, { "Content-Type": "text/plain" })
+                &&
+                res.end("No se encontro la URL proporcionada!");
 
+            break;
+        };
 
-    }).listen(PORT, "localhost")
+        // if (url.includes("rickandmorty/character/")) {
+        //     const id = url.split("/").at(-1);
+        //     const character = characters.find(character => character.id == id);
+
+        //     res.writeHead(200, { "Content-Type": "application/json" })
+        //         &&
+        //         res.end(JSON.stringify(character));
+
+        // };
+
+    
+    }).listen(PORT, "localhost");
