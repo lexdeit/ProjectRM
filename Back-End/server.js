@@ -14,12 +14,17 @@ http
 
 
             case `/rickandmorty/character/${id}`:
-
                 const character = characters.find(character => character.id == id);
 
-                res.writeHead(200, { "Content-Type": "application/json" })
-                &&
-                res.end(JSON.stringify(character));
+                character ?
+
+                    res.writeHead(200, { "Content-Type": "application/json" })
+                    && res.end(JSON.stringify(character))
+                    :
+                    res.writeHead(404, { "Content-Type": "text/plain" })
+                    && res.end("No se encontro un personaje con ese ID")
+
+
 
             break;
 
@@ -28,10 +33,10 @@ http
             default:
 
                 res.writeHead(404, { "Content-Type": "text/plain" })
-                &&
-                res.end("No se encontro la URL proporcionada!");
+                && res.end("No se encontro la URL proporcionada!");
 
             break;
+        
         };
 
         // if (url.includes("rickandmorty/character/")) {
@@ -44,5 +49,5 @@ http
 
         // };
 
-    
+
     }).listen(PORT, "localhost");
