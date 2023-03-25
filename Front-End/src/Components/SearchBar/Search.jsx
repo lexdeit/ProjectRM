@@ -4,8 +4,8 @@ import styles from "../../Components/SearchBar/Search.module.css";
 import { buscarId } from "../../Redux/Actions";
 
 const SearchBar = () => {
-    const characters = useSelector((state) => state.characters)
-    const [id, setID] = useState('')
+    const characters = useSelector((state) => state.characters);
+    const [id, setID] = useState('');
     const dispatch = useDispatch();
 
 
@@ -13,15 +13,18 @@ const SearchBar = () => {
         dispatch(
             buscarId(
                 characters.find(character => `${character.id}` === id ?
-                    character : console.log("Buscando..."))
+                    character
+                    :
+                    console.log("Buscando..."))
             )
-        )
-        setID("")
-    }
+        );
+
+        setID("");
+    };
 
     const capturar = (event) => {
-        setID(event.target.value)
-    }
+        setID(event.target.value);
+    };
 
 
 
@@ -41,8 +44,8 @@ const SearchBar = () => {
             </div>
             <span className={styles.lupa} onClick={() => enviarID(characters, id)}></span>
         </>
-    )
+    );
 
-}
+};
 
 export default SearchBar;
