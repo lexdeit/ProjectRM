@@ -11,8 +11,8 @@ const Landing = ({ login }) => {
     const characters = useSelector((state) => state.characters)
 
     const [form, setForm] = useState({
-        email: "",
-        password: "",
+        email: "alondra@gmail.com",
+        password: "YURI2021op",
     });
 
     const [errors, setErrors] = useState({

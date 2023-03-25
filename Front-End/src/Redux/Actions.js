@@ -52,14 +52,14 @@ export const eliminarCard = () => {
     return {
         type: ELIMINAR_CARDS
     }
-}
+};
 
 export const eliminar = (id) => {
     return {
         type: ELIMINAR,
         payload: id
     }
-}
+};
 
 export const buscarId = ({ id, name, gender, origin, species, image }) => (dispatch) => {
     let card =
@@ -87,9 +87,9 @@ export const buscarId = ({ id, name, gender, origin, species, image }) => (dispa
         payload: card
     });
 
-}
+};
 
-export const addFavorites = ({ id, name, gender, origin, species, image}) => (dispatch) => {
+export const addFavorites = ({ id, name, gender, origin, species, image }) => (dispatch) => {
     let newFavorite = (<CardU
         id={id}
         key={id}
@@ -104,11 +104,11 @@ export const addFavorites = ({ id, name, gender, origin, species, image}) => (di
         type: FAVORITES_CARD,
         payload: newFavorite
     })
-}
+};
 
 export const eliminarFavorites = (id) => {
     return {
         type: DELETE_FAVORITES,
         payload: id
     }
-}
+};

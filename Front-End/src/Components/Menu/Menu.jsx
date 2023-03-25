@@ -20,7 +20,7 @@ const MenuHome = () => {
                         <Link to={"/home"}>
 
                             <img
-                                src="logo.webp"
+                                src="./logo.webp"
                                 className={styles.logo}
                             />
 

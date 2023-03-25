@@ -16,6 +16,7 @@ const SearchBar = () => {
                     character : console.log("Buscando..."))
             )
         )
+        setID("")
     }
 
     const capturar = (event) => {
@@ -34,6 +35,7 @@ const SearchBar = () => {
                     className={styles.input}
                     required=""
                     onChange={capturar}
+                    value={id}
                 />
 
             </div>

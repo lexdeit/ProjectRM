@@ -1,4 +1,4 @@
-const { characters } = require('./data');
+const { characters } = require('./data.js');
 var http = require("http");
 const PORT = 3001;
 
@@ -25,6 +25,7 @@ http
                     && res.end("No se encontro un personaje con ese ID")
 
             break;
+
 
             case `/rickandmorty/characters`:
 
