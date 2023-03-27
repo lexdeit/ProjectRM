@@ -1,59 +1,30 @@
-const { characters } = require('./data.js');
-var http = require("http");
+const http = require("http");
+const getCharById = require("./controllers/getCharById");
+const getCharDetail = require("./controllers/getCharDetail");
 const PORT = 3001;
 
+const server = http.createServer((req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    const { url } = req;
+    const id = url.split("/").at(-1);
 
 
-http
-    .createServer((req, res) => {
-        res.setHeader('Access-Control-Allow-Origin', '*');
-        const { url } = req;
-        const id = url.split("/").at(-1);
+    switch (true) {
 
-        switch (url) {
+        case url.includes("onsearch"):
+            getCharById(res, id)
+            break;
 
-
-            case `/rickandmorty/character/${id}`:
-                const character = characters.find(character => character.id == id);
-
-                character ?
-
-                    res.writeHead(200, { "Content-Type": "application/json" })
-                    && res.end(JSON.stringify(character))
-                    :
-                    res.writeHead(404, { "Content-Type": "text/plain" })
-                    && res.end("No se encontro un personaje con ese ID")
-
+        case url.includes("detail"):
+            getCharDetail(res, id);
             break;
 
 
-            case `/rickandmorty/characters`:
-
-                res.writeHead(200, {"Content-Type": "application/json"})
-                && res.end(JSON.stringify(characters))
+        default:
 
             break;
+    }
 
+});
 
-
-            default:
-
-                res.writeHead(404, { "Content-Type": "text/plain" })
-                && res.end("No se encontro la URL proporcionada!");
-
-            break;
-        
-        };
-
-        // if (url.includes("rickandmorty/character/")) {
-        //     const id = url.split("/").at(-1);
-        //     const character = characters.find(character => character.id == id);
-
-        //     res.writeHead(200, { "Content-Type": "application/json" })
-        //         &&
-        //         res.end(JSON.stringify(character));
-
-        // };
-
-
-    }).listen(PORT, "localhost");
+server.listen(PORT, "localhost");
