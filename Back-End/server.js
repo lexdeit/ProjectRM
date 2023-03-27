@@ -22,7 +22,7 @@ const server = http.createServer((req, res) => {
 
         default:
             res.writeHead(404, { "Content-Type": "text/plain" })
-                && res.end("La URL no existe!");-
+                && res.end("La URL no existe!");
             break;
     }
 
