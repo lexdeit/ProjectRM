@@ -40,7 +40,15 @@ iframe {
 }
 
 
+@media only screen and (max-width: 768px){
+    .logo{
+    width: 100%;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
 
+    }
+}
 /*----------------------------------------------------------------------------------------------*/
 .loginbox {
     position: absolute;
