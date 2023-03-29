@@ -23,8 +23,8 @@ iframe {
 }
 
 .logo {
-    width: 25em;
-    height: 7em;
+    width: 21em;
+    height: 6em;
     justify-content: center;
     align-items: center;
     margin: 0%;
@@ -42,22 +42,15 @@ iframe {
 }
 
 
-@media only screen and (max-width: 1200px) {
-    iframe {
-        display: none;
-    }
-    .content{
-        background-image: url("../../../public/rick-and-morty-season-4-qk-2880x1800-_1_.webp");
-    }
-}
+
 
 /*----------------------------------------------------------------------------------------------*/
 .loginbox {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 30em;
-    padding: 40px;
+    width: 25em;
+    padding: 2em;
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
@@ -110,4 +103,13 @@ iframe {
     color: red;
     font-family: Poppins;
     font-size: 25px;
+}
+
+@media only screen and (max-width: 1200px) {
+    iframe {
+        display: none;
+    }
+    .content{
+        background-image: url("../../../public/rick-and-morty-season-4-qk-2880x1800-_1_.webp");
+    }
 }
