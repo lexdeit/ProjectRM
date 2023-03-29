@@ -24,7 +24,9 @@ iframe {
 
 .logo {
     width: 25em;
-    height: fit-content;
+    height: 7em;
+    justify-content: center;
+    align-items: center;
     margin: 0%;
     animation: scale 1s ease-in-out infinite alternate;
 }
