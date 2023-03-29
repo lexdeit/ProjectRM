@@ -1,31 +1,15 @@
-const http = require("http");
-const getCharById = require("./controllers/getCharById");
-const getCharDetail = require("./controllers/getCharDetail");
-const PORT = 3001;
-
-const server = http.createServer((req, res) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    const { url } = req;
-    const id = url.split("/").at(-1);
+const express = require("express");
+const server = express();
+const router = require('./routes/index');
+const cors = require("cors");
+const PORT = process.env.PORT || 3001;
 
 
-    switch (true) {
+server.use(express.json());
+server.use(cors());
 
-        case url.includes("onsearch"):
-            getCharById(res, id)
-            break;
-
-        case url.includes("detail"):
-            getCharDetail(res, id);
-            break;
+server.use("/", router);
 
 
-        default:
-            res.writeHead(404, { "Content-Type": "text/plain" })
-                && res.end("La URL no existe!");
-            break;
-    }
 
-});
-
-server.listen(PORT, "localhost");
+server.listen(PORT);
