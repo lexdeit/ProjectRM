@@ -1,7 +1,7 @@
-let favs = require('../utils/favs');
+let favorites = require('../utils/favs');
 
 const addCharFav = (req, res) => {
-    res.status(200).json(favs);
+    res.status(200).json(favorites);
 }
 
 module.exports = addCharFav;

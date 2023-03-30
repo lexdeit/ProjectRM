@@ -1,8 +1,8 @@
-let favs = require("../utils/favs");
+let favorites = require("../utils/favs");
 
 const addCharFav = (req, res) => {
 
-    favs.push(req.body);
+    favorites.push(req.body);
     res.status(200).json({ status: "El personaje se agrego correctamente!" });
 
 };

@@ -1,14 +1,19 @@
 const { Router } = require('express');
-const getCharById = require('../controllers/getCharById');
-const getCharDetail = require('../controllers/getCharDetail');
+const routerFavs = require('./favoritesroutes');
+const routerCharacter = require('./characterRoutes');
 
 
-
+//Aqui se indica la ruta que se usara
 const router = Router();
 
+//Obtener detalles o buscar a un personaje por su ID - Siempre que la peticion sea a "/character"!
+router.use("/character", routerCharacter);
 
-router.get("/onsearch/:id", getCharById);
-router.get("/detail/:id", getCharDetail);
+
+
+//Obtener los personajes agregados a Favoritos/ Agregar a Favoritos /
+//Eliminar de Favoritos peticion a "/favorites"
+router.use("/favorites", routerFavs);
 
 
 
