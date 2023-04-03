@@ -1,4 +1,5 @@
 import styles from "../Card/CardU.module.css";
+import { motion } from 'framer-motion';
 import { Link } from "react-router-dom";
 
 
@@ -8,7 +9,15 @@ const CardU = ({ id, name, image, species, gender, origin, funcion, like }) => {
   return (
     <>
 
-      <div className={styles.container}>
+      <motion.div
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        whileHover={{cursor: 'move'}}
+        drag
+        dragConstraints={{ left: 0, right: 0, bottom: 0, top: 0 }}
+        dragElastic={0.5}
+        className={styles.container}>
 
         <div className={styles.card2}>
 
@@ -35,20 +44,25 @@ const CardU = ({ id, name, image, species, gender, origin, funcion, like }) => {
           }
 
           <Link to={`/detail/${id}`}>
-
             <h2 className={styles.informacion}>{name}</h2>
-
-            <img className={styles.imagen} src={image} alt={name} />
-
-            <h3 className={styles.texto}>Species: {species}</h3>
-
-            <h3 className={styles.texto}>Gender: {gender}</h3>
-
-            <h3 className={styles.texto}>Origin: {origin}</h3>
-
           </Link>
+
+          {/* <img className={styles.imagen} src={image} alt={name} /> */}
+          <motion.img
+            initial={{ scale: 0, pointerEvents: 'none'}}
+            animate={{ scale: 1}}
+            transition={{ duration: 0.5 }}
+            priority
+            className={styles.imagen} src={image} alt={name} />
+
+          <h3 className={styles.texto}>Species: {species}</h3>
+
+          <h3 className={styles.texto}>Gender: {gender}</h3>
+
+          <h3 className={styles.texto}>Origin: {origin}</h3>
+
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }
