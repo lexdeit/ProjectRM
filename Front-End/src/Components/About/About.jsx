@@ -1,4 +1,5 @@
-import styles from "../About/About.module.css"
+import styles from "../About/About.module.css";
+import { motion } from "framer-motion";
 
 const About = () => {
 
@@ -6,7 +7,10 @@ const About = () => {
         <>
             <iframe src="https://www.youtube.com/embed/5_Blq9W9cT8?&autoplay=1&loop=1&mute=1&showinfo=0&controls=0"></iframe>
             <div className={styles.content}>
-                <div className={styles.card}>
+                <motion.div
+                    initial={{ y: 100, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    className={styles.card}>
 
                     <img className={styles.img}
                         src="Compressed.webp" />
@@ -42,7 +46,7 @@ const About = () => {
                     <div className={styles.corazon}>
                         <span className={styles.henry}></span>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </>
     )
